@@ -1,0 +1,11 @@
+/* 
+* @Author: Marte
+* @Date:   2018-01-30 11:16:30
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-01-30 17:09:40
+*/
+.m-zoom{position: relative;width: 300px;overflow: hidden;}
+.m-zoom img{display: block;}
+.m-zoom .minzoom{display:none;position: absolute;width:30px;height:30px;border:1px solid #fc0;background-color:#ff0;filter:alpha(Opacity=30);background-color: rgba(255,255,0,.3);}
+.m-zoom-big{display:none;position: absolute;width:400px;height:300px;overflow:hidden;}
+.m-zoom-big img{position: absolute;left:0;right:0;min-width: 1000px;}

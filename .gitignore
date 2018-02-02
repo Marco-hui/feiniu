@@ -1,0 +1,9 @@
+#过滤node_modules文件
+node_modules/
+
+#过滤所有.zip文件
+*.zip
+
+#过滤MP3、MP4文件
+*.mp3
+*.mp4

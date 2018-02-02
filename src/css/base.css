@@ -1,0 +1,41 @@
+html,body,h1,h2,h3,h4,h5,p,ul,li,ol,dl,dt,dd,form,input,label{
+    margin: 0;padding: 0;
+}
+ul,ol,li{list-style: none;}
+a{text-decoration: none;color: #000;}
+i,span{display: inline-block;}
+img{border:0 none;display: block;}
+*{box-sizing:border-box;}
+select, input { vertical-align:middle;}
+textarea { resize:none; } 
+table { border-collapse:collapse;}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #AEAEAE;
+}
+.clfix::after{
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+    zoom: 1; 
+}
+
+.fl{float:left;}
+.fr{float:right;}
+
+.locate{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+ html,body{height: 100%;}
+.container{
+    width: 1190px;
+    margin:0 auto;
+}

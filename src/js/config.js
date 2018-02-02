@@ -1,0 +1,17 @@
+require.config({
+    paths:{
+        jquery:"../lib/jquery-3.3.1",
+        dateFormat:"../lib/dateFormat",
+        jqueryui:"../lib/jquery-ui-1.12.1/jquery-ui",
+        bootstrap:"../lib/bootstrap-3.3.7/js/bootstrap",
+        mcarousel:"../lib/jquery-mCarousel/jquery-mcarousel",
+        zoom:"../lib/jquery-mZoom/jquery-mZoom"
+    },
+    shim:{
+        same:['common'],
+        mcarousel:['jquery'],
+        zoom:['jquery'],
+        jqueryui:['jquery'],
+        bootstrap:['jquery']
+    }
+});

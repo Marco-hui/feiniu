@@ -1,0 +1,30 @@
+{
+  "name": "feiniu",
+  "version": "1.0.0",
+  "description": "\"1708个人项目\"",
+  "main": "gulpfile.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Marco-hui/feiniu.git"
+  },
+  "author": "Marco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marco-hui/feiniu/issues"
+  },
+  "homepage": "https://github.com/Marco-hui/feiniu#readme",
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0"
+  }
+}
