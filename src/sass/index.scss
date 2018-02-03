@@ -4,7 +4,10 @@
 
 #banner{
     height: 454px;padding: 0 36px;background: #FDB2D0;margin-bottom:25px;
-    #banner_lbt{margin-left:190px;float: left;}
+    #banner_lbt{
+        margin-left:190px;float: left;
+        .btn-prev{left:60px;}
+    }
     .banner_right{
         width: 200px;height: 434px;background: #fff;margin-top:10px;
         .banner_right1{
@@ -51,7 +54,7 @@
                 i{font-style: normal;width: 30px;height: 25px;background: url(img/icon_2.png) no-repeat -124px -94px;color:#FFF;font-size:12px;text-align: center;line-height: 20px;vertical-align: middle;margin-right: 10px;}
             }
             ul{
-                border:1px solid #E9E9E9;border-bottom:0 none;position: absolute;right: 36px;
+                border:1px solid #E9E9E9;border-bottom:0 none;position: absolute;right: 79px;
                 li{
                     float: left;height: 35px;padding-top:6px;
                     span{padding:0 36px;border-right:1px solid #ccc;font-size:12px;color:#666;}
@@ -70,6 +73,18 @@
         }
         .main0_m{
             height: 490px;border:1px solid #D7063B;
+        }
+        .main0_b{
+            margin:25px 0 14px 0;
+            ul li{
+                padding:0 9px;float:left;border-right:1px dashed #ccc;
+                &:last-child{border:0 none;}
+                a{display:block;width:100px;height:30px;background:url(img/icon_business.png) no-repeat 0 0;}
+                @for $i from 1 through 10{
+                    $x: - (($i - 1) * 100px);
+                    &:nth-child(#{$i}) a{background-position:$x 0};
+                }
+            }
         }
     }
 }

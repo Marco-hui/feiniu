@@ -48,7 +48,7 @@ require(['config'],function(){
         
         // 首页banner轮播图
         $('#banner_lbt').mCarousel({
-            imgs:['../img/index_banner1.jpg','../img/index_banner2.jpg'],
+            imgs:['../img/index_banner1.jpg','../img/index_banner2.jpg','../img/index_banner3.jpg','../img/index_banner4.jpg'],
             width: 800,
             height: 454,
             type:'fade'

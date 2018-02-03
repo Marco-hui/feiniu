@@ -2,6 +2,8 @@
 
 #banner #banner_lbt { margin-left: 190px; float: left; }
 
+#banner #banner_lbt .btn-prev { left: 60px; }
+
 #banner .banner_right { width: 200px; height: 434px; background: #fff; margin-top: 10px; }
 
 #banner .banner_right .banner_right1 { padding: 10px; border-bottom: 1px dashed #ccc; }
@@ -44,7 +46,7 @@
 
 #main .main0 .main0_t h3 i { font-style: normal; width: 30px; height: 25px; background: url(img/icon_2.png) no-repeat -124px -94px; color: #FFF; font-size: 12px; text-align: center; line-height: 20px; vertical-align: middle; margin-right: 10px; }
 
-#main .main0 .main0_t ul { border: 1px solid #E9E9E9; border-bottom: 0 none; position: absolute; right: 36px; }
+#main .main0 .main0_t ul { border: 1px solid #E9E9E9; border-bottom: 0 none; position: absolute; right: 79px; }
 
 #main .main0 .main0_t ul li { float: left; height: 35px; padding-top: 6px; }
 
@@ -59,3 +61,31 @@
 #main .main0 .main0_t ul li:last-child:hover { margin-right: -1px; }
 
 #main .main0 .main0_m { height: 490px; border: 1px solid #D7063B; }
+
+#main .main0 .main0_b { margin: 25px 0 14px 0; }
+
+#main .main0 .main0_b ul li { padding: 0 9px; float: left; border-right: 1px dashed #ccc; }
+
+#main .main0 .main0_b ul li:last-child { border: 0 none; }
+
+#main .main0 .main0_b ul li a { display: block; width: 100px; height: 30px; background: url(img/icon_business.png) no-repeat 0 0; }
+
+#main .main0 .main0_b ul li:nth-child(1) a { background-position: 0px 0; }
+
+#main .main0 .main0_b ul li:nth-child(2) a { background-position: -100px 0; }
+
+#main .main0 .main0_b ul li:nth-child(3) a { background-position: -200px 0; }
+
+#main .main0 .main0_b ul li:nth-child(4) a { background-position: -300px 0; }
+
+#main .main0 .main0_b ul li:nth-child(5) a { background-position: -400px 0; }
+
+#main .main0 .main0_b ul li:nth-child(6) a { background-position: -500px 0; }
+
+#main .main0 .main0_b ul li:nth-child(7) a { background-position: -600px 0; }
+
+#main .main0 .main0_b ul li:nth-child(8) a { background-position: -700px 0; }
+
+#main .main0 .main0_b ul li:nth-child(9) a { background-position: -800px 0; }
+
+#main .main0 .main0_b ul li:nth-child(10) a { background-position: -900px 0; }
