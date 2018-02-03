@@ -38,6 +38,24 @@
 
 #banner .banner_right .banner_right3 button { width: 80px; height: 28px; background: #D80E42; text-align: center; line-height: 28px; font-size: 12px; color: #fff; border: 0 none; margin-left: 10px; }
 
-#main .main0 .main0_t h3 { font-size: 22px; color: #666; }
+#main .main0 { margin-bottom: 26px; }
+
+#main .main0 .main0_t h3 { font-size: 22px; color: #666; line-height: 35px; width: 150px; float: left; font-weight: normal; }
 
 #main .main0 .main0_t h3 i { font-style: normal; width: 30px; height: 25px; background: url(img/icon_2.png) no-repeat -124px -94px; color: #FFF; font-size: 12px; text-align: center; line-height: 20px; vertical-align: middle; margin-right: 10px; }
+
+#main .main0 .main0_t ul { border: 1px solid #E9E9E9; border-bottom: 0 none; position: absolute; right: 36px; }
+
+#main .main0 .main0_t ul li { float: left; height: 35px; padding-top: 6px; }
+
+#main .main0 .main0_t ul li span { padding: 0 36px; border-right: 1px solid #ccc; font-size: 12px; color: #666; }
+
+#main .main0 .main0_t ul li:hover { border: 1px solid #D7063B; border-bottom: 1px solid #fff; margin-top: -1px; margin-left: -1px; height: 36px; }
+
+#main .main0 .main0_t ul li:hover span { color: #D7063B; border: 0 none; }
+
+#main .main0 .main0_t ul li:last-child span { border-right: 0 none; }
+
+#main .main0 .main0_t ul li:last-child:hover { margin-right: -1px; }
+
+#main .main0 .main0_m { height: 490px; border: 1px solid #D7063B; }
