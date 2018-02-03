@@ -1,0 +1,54 @@
+
+// 导入var.scss
+@import 'var';
+
+#banner{
+    height: 454px;padding: 0 36px;background: #FDB2D0;margin-bottom:25px;
+    #banner_lbt{margin-left:190px;float: left;}
+    .banner_right{
+        width: 200px;height: 434px;background: #fff;margin-top:10px;
+        .banner_right1{
+            padding:10px;border-bottom:1px dashed #ccc;
+            ul li{
+                float: left;width: 50px;margin-right:15px;
+                &:last-child{margin-right: 0;}
+                a{
+                    display: block;height: 68px;padding-top:55px;font-size:12px;color:#6D696B;position: relative;
+                    i{width: 50px;height: 50px;background:url(img/icon_1.png) no-repeat -50px -160px;position: absolute;left: 0;top: 0;}
+                    &:hover{color:$hoverC;}
+                }
+                &:nth-child(2) a i{background-position: -100px -160px;}
+                &:nth-child(3) a i{background-position: -150px -160px;}
+            }
+        }
+        .banner_right2{
+            height: 58px;padding:10px 0 0 14px;
+            a{
+                font-size:12px;color:#6D696B;
+                &:hover{color:$hoverC;text-decoration: underline;}
+            }
+        }
+        .banner_right3{
+            height: 162px;border:0 none;background: #eee;
+            ul li{
+                width: 70px;padding: 0;margin: 0;text-align: center;margin-right:10px;
+                a{margin: 0;padding: 0;}
+            }
+            .tabs0{
+                padding:10px;
+                input{width: 170px;height: 26px;border:1px solid #E1DDDF;margin-bottom: 2px;padding-left:5px;font-size:12px;}
+            }
+            button{width: 80px;height: 28px;background: #D80E42;text-align: center;line-height: 28px;font-size:12px;color:#fff;border:0 none;margin-left: 10px;}
+        }
+    }
+}
+#main{
+    .main0{
+        .main0_t{
+            h3{
+                font-size:22px;color:$fontC;
+                i{font-style: normal;width: 30px;height: 25px;background: url(img/icon_2.png) no-repeat -124px -94px;color:#FFF;font-size:12px;text-align: center;line-height: 20px;vertical-align: middle;margin-right: 10px;}
+            }
+        }
+    }
+}

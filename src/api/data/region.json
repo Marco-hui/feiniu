@@ -7439,7 +7439,7 @@
             "id": 509999,
             "name": "崇青测试市"
         }],
-        "pinyin": "ZhongQing",
+        "pinyin": "ChongQing",
         "hot": true,
         "municipality": true
     }, {
@@ -9147,7 +9147,7 @@
         "pinyin": "XiCang"
     }, {
         "id": 610000,
-        "name": "陕西省",
+        "name": "陕西",
         "regions": [{
             "id": 610100,
             "name": "西安市",

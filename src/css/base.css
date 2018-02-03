@@ -2,17 +2,19 @@ html,body,h1,h2,h3,h4,h5,p,ul,li,ol,dl,dt,dd,form,input,label{
     margin: 0;padding: 0;
 }
 ul,ol,li{list-style: none;}
-a{text-decoration: none;color: #000;}
+a{text-decoration: none;color: #666;}
 i,span{display: inline-block;}
 img{border:0 none;display: block;}
 *{box-sizing:border-box;}
 select, input { vertical-align:middle;}
 textarea { resize:none; } 
 table { border-collapse:collapse;}
+input,button{outline-style:none;} 
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
     color: #AEAEAE;
+    font-size:12px;
 }
 .clfix::after{
     content: "";

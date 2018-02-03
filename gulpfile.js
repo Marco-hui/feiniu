@@ -26,6 +26,8 @@ gulp.task('jtSass',function(){
 // 自动刷新
 gulp.task('server',function(){
     browserSync({
+        // 指定端口
+        port:5166,
         // 代理服务器
         // 用browserSync代理php服务器
         //  * 识别php
