@@ -46,7 +46,7 @@
 
 #main .main0 .main0_t ul { border: 1px solid #E9E9E9; border-bottom: 0 none; position: absolute; right: 36px; }
 
-#main .main0 .main0_t ul li { float: left; height: 35px; padding-top: 6px; }
+#main .main0 .main0_t ul li { float: left; height: 35px; padding-top: 6px; cursor: pointer; }
 
 #main .main0 .main0_t ul li span { padding: 0 36px; border-right: 1px solid #ccc; font-size: 12px; color: #666; }
 
@@ -58,7 +58,7 @@
 
 #main .main0 .main0_t ul li:last-child:hover { margin-right: -1px; }
 
-#main .main0 .main0_m { height: 490px; border: 1px solid #D7063B; }
+#main .main0 .main0_m { border-top: 1px solid #D7063B; }
 
 #main .main0 .main0_b { margin: 25px 0 14px 0; }
 
@@ -87,6 +87,24 @@
 #main .main0 .main0_b ul li:nth-child(9) a { background-position: -800px 0; }
 
 #main .main0 .main0_b ul li:nth-child(10) a { background-position: -900px 0; }
+
+#main .main0_0 .main0_m .main0_m_l { width: 190px; background: url(../img/index_1f_l1.jpg) no-repeat 0 0; padding-top: 244px; }
+
+#main .main0_0 .main0_m .main0_m_l a { font-size: 12px; color: #666; display: block; }
+
+#main .main0_0 .main0_m .main0_m_l a:hover { text-decoration: underline; color: #D7063B; }
+
+#main .main0_0 .main0_m .main0_m_l .main0_m_l_m { height: 62px; background: #FEE6D4; padding-left: 18px; padding-top: 13px; line-height: 20px; }
+
+#main .main0_0 .main0_m .main0_m_l .main0_m_l_b { height: 182px; padding: 16px; background: #FEF0E5; }
+
+#main .main0_0 .main0_m .main0_m_l .main0_m_l_b ul li { float: left; margin-right: 15px; line-height: 28px; }
+
+#main .main2 .main0_m .main0_m_l { background: url(../img/index_2f_l1.jpg) no-repeat 0 0; }
+
+#main .main2 .main0_m .main0_m_l .main0_m_l_m { background: #FFE2ED; }
+
+#main .main2 .main0_m .main0_m_l .main0_m_l_b { background: #FFEDF4; }
 
 #main .main2 .main0_b ul li:nth-child(1) a { background-position: 0px -30px; }
 
@@ -167,6 +185,12 @@
 #main .main5 .main0_b ul li:nth-child(9) a { background-position: -800px -150px; }
 
 #main .main5 .main0_b ul li:nth-child(10) a { background-position: -900px -150px; }
+
+#main .main6 .main0_m .main0_m_l { background: url(../img/index_6f_l1.jpg) no-repeat 0 0; }
+
+#main .main6 .main0_m .main0_m_l .main0_m_l_m { background: #EFE5F3; }
+
+#main .main6 .main0_m .main0_m_l .main0_m_l_b { background: #F5F0F8; }
 
 #main .main6 .main0_b ul li:nth-child(1) a { background-position: 0px -120px; }
 

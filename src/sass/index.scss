@@ -55,7 +55,7 @@
             ul{
                 border:1px solid #E9E9E9;border-bottom:0 none;position: absolute;right: 36px;
                 li{
-                    float: left;height: 35px;padding-top:6px;
+                    float: left;height: 35px;padding-top:6px;cursor:pointer;
                     span{padding:0 36px;border-right:1px solid #ccc;font-size:12px;color:#666;}
                     &:hover{
                         border:1px solid #D7063B;border-bottom:1px solid #fff;margin-top: -1px;margin-left: -1px;height: 36px;
@@ -71,7 +71,7 @@
             }
         }
         .main0_m{
-            height: 490px;border:1px solid #D7063B;
+            border-top:1px solid #D7063B;
         }
         .main0_b{
             margin:25px 0 14px 0;
@@ -86,34 +86,83 @@
             }
         }
     }
-    .main2 .main0_b ul li{
-        @for $i from 1 through 10{
-            $x: - (($i - 1) * 100px);
-            &:nth-child(#{$i}) a{background-position:$x -30px};
+    .main0_0{
+        .main0_m{
+            .main0_m_l{
+                width: 190px;background: url(../img/index_1f_l1.jpg) no-repeat 0 0;padding-top:244px;
+                a{
+                    font-size:12px;color:$fontC;display: block;
+                    &:hover{text-decoration: underline;color:$hoverC;}
+                }
+                .main0_m_l_m{
+                    height: 62px;background: #FEE6D4;padding-left:18px;padding-top:13px;line-height: 20px;
+                }
+                .main0_m_l_b{
+                    height: 182px;padding:16px;background: #FEF0E5;
+                    ul li{
+                        float: left;margin-right: 15px;line-height: 28px;
+                    }
+                }
+            }
         }
     }
-    .main3 .main0_b ul li{
-        @for $i from 1 through 10{
-            $x: - (($i - 1) * 100px);
-            &:nth-child(#{$i}) a{background-position:$x -60px};
+    .main0_1{}
+
+    .main2{
+        .main0_m{
+            .main0_m_l{
+                background: url(../img/index_2f_l1.jpg) no-repeat 0 0;
+                .main0_m_l_m{background: #FFE2ED;}
+                .main0_m_l_b{background: #FFEDF4;}
+            }
+        }
+        .main0_b ul li{
+            @for $i from 1 through 10{
+                $x: - (($i - 1) * 100px);
+                &:nth-child(#{$i}) a{background-position:$x -30px};
+            }
         }
     }
-    .main4 .main0_b ul li{
-        @for $i from 1 through 10{
-            $x: - (($i - 1) * 100px);
-            &:nth-child(#{$i}) a{background-position:$x -90px};
+    .main3{
+        .main0_m{}
+        .main0_b ul li{
+            @for $i from 1 through 10{
+                $x: - (($i - 1) * 100px);
+                &:nth-child(#{$i}) a{background-position:$x -60px};
+            }
         }
     }
-    .main5 .main0_b ul li{
-        @for $i from 1 through 10{
-            $x: - (($i - 1) * 100px);
-            &:nth-child(#{$i}) a{background-position:$x -150px};
+    .main4{
+        .main0_m{}
+        .main0_b ul li{
+            @for $i from 1 through 10{
+                $x: - (($i - 1) * 100px);
+                &:nth-child(#{$i}) a{background-position:$x -90px};
+            }
         }
     }
-    .main6 .main0_b ul li{
-        @for $i from 1 through 10{
-            $x: - (($i - 1) * 100px);
-            &:nth-child(#{$i}) a{background-position:$x -120px};
+    .main5{
+        .main0_m{}
+        .main0_b ul li{
+            @for $i from 1 through 10{
+                $x: - (($i - 1) * 100px);
+                &:nth-child(#{$i}) a{background-position:$x -150px};
+            }
+        }
+    }
+    .main6{
+        .main0_m{
+            .main0_m_l{
+                background: url(../img/index_6f_l1.jpg) no-repeat 0 0;
+                .main0_m_l_m{background: #EFE5F3;}
+                .main0_m_l_b{background: #F5F0F8;}
+            }
+        }
+        .main0_b ul li{
+            @for $i from 1 through 10{
+                $x: - (($i - 1) * 100px);
+                &:nth-child(#{$i}) a{background-position:$x -120px};
+            }
         }
     }
     .AD{margin-bottom:25px;}
