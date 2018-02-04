@@ -66,6 +66,61 @@ require(['config'],function(){
             })
         }
         aside();
-        
+
+        //asideL楼梯
+        function AsideL(){
+            // 窗口滚动事件
+            var $lis=$('#asideL ul').children();
+            window.onscroll=function(e){
+                var sY=scrollY;
+                console.log(sY);
+                if(sY>=500 && sY<4800){
+                    $('#asideL').show();
+                }else{
+                    $('#asideL').hide();
+                }
+                switch(true){
+                    case sY>=500 && sY<1000:
+                        $lis.eq(0).find('.first').hide();
+                        $lis.eq(0).find('.last').css('display','block');
+                        $lis.eq(0).siblings('li').find('.first').show();
+                        $lis.eq(0).siblings('li').find('.last').hide();
+                        break;
+                    case sY>=1000 && sY<1600:
+                        $lis.eq(1).find('.first').hide();
+                        $lis.eq(1).find('.last').css('display','block');
+                        $lis.eq(1).siblings('li').find('.first').show();
+                        $lis.eq(1).siblings('li').find('.last').hide();
+                        break;
+                    case sY>=1600 && sY<2600:
+                        $lis.eq(2).find('.first').hide();
+                        $lis.eq(2).find('.last').css('display','block');
+                        $lis.eq(2).siblings('li').find('.first').show();
+                        $lis.eq(2).siblings('li').find('.last').hide();
+                        break;
+                    case sY>=2600 && sY<3300:
+                        $lis.eq(3).find('.first').hide();
+                        $lis.eq(3).find('.last').css('display','block');
+                        $lis.eq(3).siblings('li').find('.first').show();
+                        $lis.eq(3).siblings('li').find('.last').hide();
+                        break;
+                    case sY>=3300 && sY<4200:
+                        $lis.eq(4).find('.first').hide();
+                        $lis.eq(4).find('.last').css('display','block');
+                        $lis.eq(4).siblings('li').find('.first').show();
+                        $lis.eq(4).siblings('li').find('.last').hide();
+                        break;
+                    case sY>=3600 && sY<4800:
+                        $lis.eq(5).find('.first').hide();
+                        $lis.eq(5).find('.last').css('display','block');
+                        $lis.eq(5).siblings('li').find('.first').show();
+                        $lis.eq(5).siblings('li').find('.last').hide();
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+        AsideL();
     })
 })

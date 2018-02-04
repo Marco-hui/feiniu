@@ -106,9 +106,33 @@
             }
         }
     }
-    .main0_1{}
+    .main0_1{
+        .main0_m{
+            .main0_m_l{
+                 width: 390px;background: url(../img/index_3f_l1.jpg) no-repeat 0 0;padding-top:244px;
+            }
+            a{
+                font-size:12px;color:$fontC;display: block;
+                &:hover{text-decoration: underline;color:$hoverC;}
+            }
+            .main0_m_l_m{
+                height: 65px;background: #FEDCEC;padding-left:25px;padding-top:13px;line-height: 20px;
+            }
+            .main0_m_l_b{
+                height: 180px;padding:22px 25px;background: #FEEAF3;
+                &>div{
+                    float: left;width: 150px;
+                    &.left{margin-right: 30px;}
+                    .l1 li a{font-size:14px;line-height: 25px;}
+                    .l2 li{
+                        float: left;margin-right: 15px;line-height: 28px;
+                    }
+                }
+            }
+        }
+    }
 
-    .main2{
+    #main2{
         .main0_m{
             .main0_m_l{
                 background: url(../img/index_2f_l1.jpg) no-repeat 0 0;
@@ -123,7 +147,7 @@
             }
         }
     }
-    .main3{
+    #main3{
         .main0_m{}
         .main0_b ul li{
             @for $i from 1 through 10{
@@ -132,8 +156,12 @@
             }
         }
     }
-    .main4{
-        .main0_m{}
+    #main4{
+        .main0_m{
+            .main0_m_l{background: url(../img/index_4f_l1.jpg) no-repeat 0 0;}
+            .main0_m_l_m{background: #F0D4C7;}
+            .main0_m_l_b{background: #F8E6DF;}
+        }
         .main0_b ul li{
             @for $i from 1 through 10{
                 $x: - (($i - 1) * 100px);
@@ -141,8 +169,12 @@
             }
         }
     }
-    .main5{
-        .main0_m{}
+    #main5{
+        .main0_m{
+            .main0_m_l{background: url(../img/index_5f_l1.jpg) no-repeat 0 0;}
+            .main0_m_l_m{background: #CAF4F4;}
+            .main0_m_l_b{background: #DFF8F8;}
+        }
         .main0_b ul li{
             @for $i from 1 through 10{
                 $x: - (($i - 1) * 100px);
@@ -150,7 +182,7 @@
             }
         }
     }
-    .main6{
+    #main6{
         .main0_m{
             .main0_m_l{
                 background: url(../img/index_6f_l1.jpg) no-repeat 0 0;
@@ -206,6 +238,19 @@
                     }
                 }
             }
+        }
+    }
+}
+#asideL{
+    width:34px;position:fixed;left:0;top:50%;transform:translate(0,-50%);display:none;
+    a{display:block;height:36px;width:34px;font-size:12px;color:#5E5E5E;text-align:center;border-top:1px solid #ccc;border-right:1px solid #ccc;}
+    &>a{background:#957682;color:#fff;}
+    ul{
+        border-bottom:1px solid #ccc;
+        li{
+            a.first{line-height:36px;}
+            a.last{color:#fff;background:#FF6B6B;display:none;}
+            &:hover a.first{background:#FF6B6B;color:#fff;}
         }
     }
 }
