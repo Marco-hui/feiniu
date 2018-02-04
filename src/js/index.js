@@ -56,6 +56,49 @@ require(['config'],function(){
 
         // banner右边栏tab标签切换
         $('#banner .banner_right3').tabs();
+
+        // aside侧栏相关
+        function aside(){
+            // 滚动到一定距离出现
+            window.addEventListener('scroll',function(){
+                if(window.scrollY>600){
+                    $("#aside").show();
+                }else{
+                    $("#aside").hide();
+                }
+            })
+            // 右侧栏aside_right
+            var $aR=$('#aside .aside_right');
+            $aR.css('height',window.innerHeight); //设置高度与浏览器等高
+
+            // 鼠标移入移出
+            $aR.on('mouseenter','ul li',function(){
+                $(this).find('b').css({background:"#fff",color:"#D7063B"})
+                var $span=$(this).find('span');
+                $span.show().css('background','#D7063B').animate({left:- $span.outerWidth()});
+            }).on('mouseleave','ul li',function(){
+                $(this).find('b').css({background:"#D7063B",color:"#fff"})
+                var $span=$(this).find('span');
+                $span.css('background','#666').animate({left:0},function(){
+                    $span.hide();
+                });
+            })
+
+            // 点击返回顶部
+            $aR.find('.toTop').click(function(){
+                var timer=setInterval(function(){
+                    var current=window.scrollY;
+                    var speed= - current/10;
+                    var y=current + speed;
+                    if(y<10){
+                        y=0;
+                        clearInterval(timer);
+                    }
+                    window.scrollTo(0,y);
+                },30)
+            })
+        }
+        aside();
         
     })
 })

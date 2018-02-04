@@ -2,8 +2,6 @@
 
 #banner #banner_lbt { margin-left: 190px; float: left; }
 
-#banner #banner_lbt .btn-prev { left: 60px; }
-
 #banner .banner_right { width: 200px; height: 434px; background: #fff; margin-top: 10px; }
 
 #banner .banner_right .banner_right1 { padding: 10px; border-bottom: 1px dashed #ccc; }
@@ -46,7 +44,7 @@
 
 #main .main0 .main0_t h3 i { font-style: normal; width: 30px; height: 25px; background: url(img/icon_2.png) no-repeat -124px -94px; color: #FFF; font-size: 12px; text-align: center; line-height: 20px; vertical-align: middle; margin-right: 10px; }
 
-#main .main0 .main0_t ul { border: 1px solid #E9E9E9; border-bottom: 0 none; position: absolute; right: 79px; }
+#main .main0 .main0_t ul { border: 1px solid #E9E9E9; border-bottom: 0 none; position: absolute; right: 36px; }
 
 #main .main0 .main0_t ul li { float: left; height: 35px; padding-top: 6px; }
 
@@ -89,3 +87,151 @@
 #main .main0 .main0_b ul li:nth-child(9) a { background-position: -800px 0; }
 
 #main .main0 .main0_b ul li:nth-child(10) a { background-position: -900px 0; }
+
+#main .main2 .main0_b ul li:nth-child(1) a { background-position: 0px -30px; }
+
+#main .main2 .main0_b ul li:nth-child(2) a { background-position: -100px -30px; }
+
+#main .main2 .main0_b ul li:nth-child(3) a { background-position: -200px -30px; }
+
+#main .main2 .main0_b ul li:nth-child(4) a { background-position: -300px -30px; }
+
+#main .main2 .main0_b ul li:nth-child(5) a { background-position: -400px -30px; }
+
+#main .main2 .main0_b ul li:nth-child(6) a { background-position: -500px -30px; }
+
+#main .main2 .main0_b ul li:nth-child(7) a { background-position: -600px -30px; }
+
+#main .main2 .main0_b ul li:nth-child(8) a { background-position: -700px -30px; }
+
+#main .main2 .main0_b ul li:nth-child(9) a { background-position: -800px -30px; }
+
+#main .main2 .main0_b ul li:nth-child(10) a { background-position: -900px -30px; }
+
+#main .main3 .main0_b ul li:nth-child(1) a { background-position: 0px -60px; }
+
+#main .main3 .main0_b ul li:nth-child(2) a { background-position: -100px -60px; }
+
+#main .main3 .main0_b ul li:nth-child(3) a { background-position: -200px -60px; }
+
+#main .main3 .main0_b ul li:nth-child(4) a { background-position: -300px -60px; }
+
+#main .main3 .main0_b ul li:nth-child(5) a { background-position: -400px -60px; }
+
+#main .main3 .main0_b ul li:nth-child(6) a { background-position: -500px -60px; }
+
+#main .main3 .main0_b ul li:nth-child(7) a { background-position: -600px -60px; }
+
+#main .main3 .main0_b ul li:nth-child(8) a { background-position: -700px -60px; }
+
+#main .main3 .main0_b ul li:nth-child(9) a { background-position: -800px -60px; }
+
+#main .main3 .main0_b ul li:nth-child(10) a { background-position: -900px -60px; }
+
+#main .main4 .main0_b ul li:nth-child(1) a { background-position: 0px -90px; }
+
+#main .main4 .main0_b ul li:nth-child(2) a { background-position: -100px -90px; }
+
+#main .main4 .main0_b ul li:nth-child(3) a { background-position: -200px -90px; }
+
+#main .main4 .main0_b ul li:nth-child(4) a { background-position: -300px -90px; }
+
+#main .main4 .main0_b ul li:nth-child(5) a { background-position: -400px -90px; }
+
+#main .main4 .main0_b ul li:nth-child(6) a { background-position: -500px -90px; }
+
+#main .main4 .main0_b ul li:nth-child(7) a { background-position: -600px -90px; }
+
+#main .main4 .main0_b ul li:nth-child(8) a { background-position: -700px -90px; }
+
+#main .main4 .main0_b ul li:nth-child(9) a { background-position: -800px -90px; }
+
+#main .main4 .main0_b ul li:nth-child(10) a { background-position: -900px -90px; }
+
+#main .main5 .main0_b ul li:nth-child(1) a { background-position: 0px -150px; }
+
+#main .main5 .main0_b ul li:nth-child(2) a { background-position: -100px -150px; }
+
+#main .main5 .main0_b ul li:nth-child(3) a { background-position: -200px -150px; }
+
+#main .main5 .main0_b ul li:nth-child(4) a { background-position: -300px -150px; }
+
+#main .main5 .main0_b ul li:nth-child(5) a { background-position: -400px -150px; }
+
+#main .main5 .main0_b ul li:nth-child(6) a { background-position: -500px -150px; }
+
+#main .main5 .main0_b ul li:nth-child(7) a { background-position: -600px -150px; }
+
+#main .main5 .main0_b ul li:nth-child(8) a { background-position: -700px -150px; }
+
+#main .main5 .main0_b ul li:nth-child(9) a { background-position: -800px -150px; }
+
+#main .main5 .main0_b ul li:nth-child(10) a { background-position: -900px -150px; }
+
+#main .main6 .main0_b ul li:nth-child(1) a { background-position: 0px -120px; }
+
+#main .main6 .main0_b ul li:nth-child(2) a { background-position: -100px -120px; }
+
+#main .main6 .main0_b ul li:nth-child(3) a { background-position: -200px -120px; }
+
+#main .main6 .main0_b ul li:nth-child(4) a { background-position: -300px -120px; }
+
+#main .main6 .main0_b ul li:nth-child(5) a { background-position: -400px -120px; }
+
+#main .main6 .main0_b ul li:nth-child(6) a { background-position: -500px -120px; }
+
+#main .main6 .main0_b ul li:nth-child(7) a { background-position: -600px -120px; }
+
+#main .main6 .main0_b ul li:nth-child(8) a { background-position: -700px -120px; }
+
+#main .main6 .main0_b ul li:nth-child(9) a { background-position: -800px -120px; }
+
+#main .main6 .main0_b ul li:nth-child(10) a { background-position: -900px -120px; }
+
+#main .AD { margin-bottom: 25px; }
+
+#aside { display: none; }
+
+#aside .aside_top { position: fixed; top: 0; left: 0; width: 100%; }
+
+#aside .aside_top .shade { width: 100%; height: 50px; background: rgba(0, 0, 0, 0.6); position: absolute; top: 0; left: 0; }
+
+#aside .aside_top h2 { width: 100px; height: 40px; background: url(img/feiniu_main_logo_hui.png) no-repeat 0 0; position: absolute; left: 40px; top: 5px; }
+
+#aside .aside_top p { position: absolute; top: 5px; left: 340px; }
+
+#aside .aside_top p input { width: 444px; height: 40px; border: 2px solid #D7063B; padding-left: 40px; float: left; }
+
+#aside .aside_top p button { width: 98px; height: 40px; background: #D7063B; color: #fff; font-size: 18px; text-align: center; line-height: 40px; border: 0 none; float: left; border-radius: 0 5px 5px 0; cursor: pointer; letter-spacing: 8px; }
+
+#aside .aside_top p i { position: absolute; width: 20px; height: 20px; background: url(img/icon_1.png) no-repeat 0 -52px; left: 10px; top: 10px; }
+
+#aside .aside_right { width: 35px; position: fixed; right: 0; top: 0; }
+
+#aside .aside_right .shade { width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); position: absolute; top: 0; left: 0; }
+
+#aside .aside_right ul { margin-top: 266px; position: relative; }
+
+#aside .aside_right ul li { font-size: 12px; margin-bottom: 10px; }
+
+#aside .aside_right ul li a { color: #fff; position: relative; display: block; width: 35px; height: 35px; padding: 0 6px; }
+
+#aside .aside_right ul li a i { position: absolute; font-size: 18px; }
+
+#aside .aside_right ul li a span { position: absolute; width: 92px; height: 35px; text-align: center; line-height: 35px; left: 0; top: 0; background: #666; display: none; }
+
+#aside .aside_right ul li:hover a { background: #D7063B; }
+
+#aside .aside_right ul li:first-child { margin-bottom: 10px; }
+
+#aside .aside_right ul li:first-child a { height: 116px; padding: 36px 10px 40px; position: relative; }
+
+#aside .aside_right ul li:first-child a i { position: absolute; top: 12px; left: 6px; }
+
+#aside .aside_right ul li:first-child a b { display: block; width: 20px; height: 20px; text-align: center; line-height: 20px; background: #D7063B; border-radius: 50%; bottom: 5px; left: 7px; position: absolute; }
+
+#aside .aside_right ul li:last-child { margin-bottom: 0px; margin-top: 26px; }
+
+#aside .aside_right ul li:last-child a { cursor: pointer; }
+
+#aside .aside_right ul li:last-child a i { font-size: 25px; }
