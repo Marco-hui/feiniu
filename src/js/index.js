@@ -73,11 +73,11 @@ require(['config'],function(){
             var $lis=$('#asideL ul').children();
             window.onscroll=function(e){
                 var sY=scrollY;
-                console.log(sY);
                 if(sY>=500 && sY<4800){
                     $('#asideL').show();
                 }else{
                     $('#asideL').hide();
+                    $("#main .main0").find('.main0_t h3 i').css('background-position','-124px -94px');
                 }
                 switch(true){
                     case sY>=500 && sY<1000:
@@ -85,36 +85,42 @@ require(['config'],function(){
                         $lis.eq(0).find('.last').css('display','block');
                         $lis.eq(0).siblings('li').find('.first').show();
                         $lis.eq(0).siblings('li').find('.last').hide();
+                        $("#main .main0").find('.main0_t h3 i').eq(0).css('background-position','-156px -94px').closest('.main0').siblings('.main0').find('.main0_t h3 i').css('background-position','-124px -94px');
                         break;
                     case sY>=1000 && sY<1600:
                         $lis.eq(1).find('.first').hide();
                         $lis.eq(1).find('.last').css('display','block');
                         $lis.eq(1).siblings('li').find('.first').show();
                         $lis.eq(1).siblings('li').find('.last').hide();
+                        $("#main .main0").find('.main0_t h3 i').eq(1).css('background-position','-156px -94px').closest('.main0').siblings('.main0').find('.main0_t h3 i').css('background-position','-124px -94px');
                         break;
                     case sY>=1600 && sY<2600:
                         $lis.eq(2).find('.first').hide();
                         $lis.eq(2).find('.last').css('display','block');
                         $lis.eq(2).siblings('li').find('.first').show();
                         $lis.eq(2).siblings('li').find('.last').hide();
+                        $("#main .main0").find('.main0_t h3 i').eq(2).css('background-position','-156px -94px').closest('.main0').siblings('.main0').find('.main0_t h3 i').css('background-position','-124px -94px');
                         break;
                     case sY>=2600 && sY<3300:
                         $lis.eq(3).find('.first').hide();
                         $lis.eq(3).find('.last').css('display','block');
                         $lis.eq(3).siblings('li').find('.first').show();
                         $lis.eq(3).siblings('li').find('.last').hide();
+                        $("#main .main0").find('.main0_t h3 i').eq(3).css('background-position','-156px -94px').closest('.main0').siblings('.main0').find('.main0_t h3 i').css('background-position','-124px -94px');
                         break;
                     case sY>=3300 && sY<4200:
                         $lis.eq(4).find('.first').hide();
                         $lis.eq(4).find('.last').css('display','block');
                         $lis.eq(4).siblings('li').find('.first').show();
                         $lis.eq(4).siblings('li').find('.last').hide();
+                        $("#main .main0").find('.main0_t h3 i').eq(4).css('background-position','-156px -94px').closest('.main0').siblings('.main0').find('.main0_t h3 i').css('background-position','-124px -94px');
                         break;
                     case sY>=3600 && sY<4800:
                         $lis.eq(5).find('.first').hide();
                         $lis.eq(5).find('.last').css('display','block');
                         $lis.eq(5).siblings('li').find('.first').show();
                         $lis.eq(5).siblings('li').find('.last').hide();
+                        $("#main .main0").find('.main0_t h3 i').eq(5).css('background-position','-156px -94px').closest('.main0').siblings('.main0').find('.main0_t h3 i').css('background-position','-124px -94px');
                         break;
                     default:
                         break;
@@ -122,5 +128,30 @@ require(['config'],function(){
             }
         }
         AsideL();
+
+        // #main .main0_m_r 部分的tab标签切换
+        function mainTab(){
+            var $main0 = $('#main .main0');
+            $main0.each((i,item)=>{
+                $(item).find('.main0_t_tab li').eq(0).addClass('active');
+                $(item).find('.main0_m_r .content0').eq(0).show();
+                $(item).on('mouseenter','.main0_t_tab li',function(){
+                    var len=$(this).parent().children().length-1;
+                    var idx=$(this).index();
+                    $(this).addClass('active').siblings('li').removeClass('active');
+                    if(idx === len){ //解决最后一个抖动问题
+                        $(this).addClass('lastActive');
+                    };
+                    $(item).find('.main0_m_r .content0').eq(idx).show().siblings().hide();
+                }).on('mouseleave','.main0_t_tab li',function(){
+                    var len=$(this).parent().children().length-1;
+                    var idx=$(this).index();
+                    if(idx === len){
+                        $(this).removeClass('lastActive');
+                    };
+                })
+            })
+        }
+        mainTab();
     })
 })

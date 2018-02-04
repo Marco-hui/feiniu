@@ -50,15 +50,25 @@
 
 #main .main0 .main0_t ul li span { padding: 0 36px; border-right: 1px solid #ccc; font-size: 12px; color: #666; }
 
-#main .main0 .main0_t ul li:hover { border: 1px solid #D7063B; border-bottom: 1px solid #fff; margin-top: -1px; margin-left: -1px; height: 36px; }
+#main .main0 .main0_t ul li.active { border: 1px solid #D7063B; border-bottom: 1px solid #fff; margin-top: -1px; margin-left: -1px; height: 36px; }
 
-#main .main0 .main0_t ul li:hover span { color: #D7063B; border: 0 none; }
+#main .main0 .main0_t ul li.active span { color: #D7063B; border: 0 none; }
 
 #main .main0 .main0_t ul li:last-child span { border-right: 0 none; }
 
-#main .main0 .main0_t ul li:last-child:hover { margin-right: -1px; }
+#main .main0 .main0_t ul li:last-child.lastActive { margin-right: -1px; }
 
-#main .main0 .main0_m { border-top: 1px solid #D7063B; }
+#main .main0 .main0_m { border-top: 1px solid #D7063B; overflow: hidden; }
+
+#main .main0 .main0_m .main0_m_l { float: left; }
+
+#main .main0 .main0_m .main0_m_r { float: left; }
+
+#main .main0 .main0_m .main0_m_r .content0 { display: none; }
+
+#main .main0 .main0_m .main0_m_r .content0 ul { width: 1000px; }
+
+#main .main0 .main0_m .main0_m_r .content0 ul li { float: left; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; }
 
 #main .main0 .main0_b { margin: 25px 0 14px 0; }
 
