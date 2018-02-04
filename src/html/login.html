@@ -3,8 +3,69 @@
 <head>
     <meta charset="UTF-8" />
     <title>登录飞牛网</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="../js/require.js" data-main="../js/login"></script>
 </head>
 <body>
-    
+    <div id="logo">
+        <div class="container">
+            <h1><a href="../index.html"><img src="../img/feiniu_main_logo.png" height="60" width="190" /></a></h1>
+        </div>
+    </div>
+    <main id="main">
+        <div class="container clfix">
+            <div class="left fl">
+                <img src="../img/login_pic.jpg" height="410" width="620">
+            </div>
+            <div class="right fl">
+                <div class="tab">
+                    <ul class="clfix">
+                        <li><a>普通登录</a></li>
+                        <li><a>扫码登录更安全</a></li>
+                    </ul>
+                </div>
+                <div class="hi clfix">
+                    <h4>登录飞牛网</h4>
+                    <span>还不是飞牛网会员？ <a href="register.html">免费注册</a></span>
+                </div>
+                <div class="autoLogin_hint">
+                    <i></i><span>公共场所不建议自动登录，以防帐号丢失</span>
+                </div>
+                <div class="form content1">
+                    <div class="tel">
+                        <input type="tel"  id="username" name="username" placeholder="手机号" required>
+                    </div>
+                    <div class="passW">
+                        <input type="password" id="pass" name="password" placeholder="登录密码" required>
+                        <span class="pass_tip">用户名或密码错误</span>
+                        <a href="#">忘记密码？</a>
+                    </div>
+                    <div class="auto">
+                        <input type="checkbox" id="autoLogin"><label for="autoLogin">自动登录</label>
+                    </div>
+                    <input type="submit" value="登录" id="submit">
+                </div>
+                <div class="form content2">
+                    <b>用飞牛网APP，扫一扫安全登录</b>
+                    <img src="../img/login_tdCode.png" height="160" width="160" />
+                    <p>打开新版 <a href="#"> 飞牛APP </a> 扫描二维码</p>
+                </div>
+                <div class="other_login">
+                    <p>使用合作伙伴账号登录：</p>
+                    <ul class="clfix">
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="footer"></div>
 </body>
 </html>

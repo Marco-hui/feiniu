@@ -8,7 +8,7 @@ require.config({
         zoom:"../lib/jquery-mZoom/jquery-mZoom"
     },
     shim:{
-        same:['common'],
+        same:['jquery','common'],
         mcarousel:['jquery'],
         zoom:['jquery'],
         jqueryui:['jquery'],
