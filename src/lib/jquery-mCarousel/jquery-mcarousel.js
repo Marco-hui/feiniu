@@ -31,7 +31,7 @@
 					
 					var $ul = $('<ul/>');
 					$ul.html(opt.imgs.map(function(item){
-						return `<li><img src="${item}"/></li>`;
+						return `<li><a href="#"><img src="${item}"/></a></li>`;
 					}).join(''));
 
 					$this.append($ul);

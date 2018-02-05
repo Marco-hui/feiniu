@@ -153,5 +153,15 @@ require(['config'],function(){
             })
         }
         mainTab();
+
+        // main4_m_r_t1 下的轮播图
+        $('#main4_m_r_t1_lbt').mCarousel({
+            imgs:['../img/index_4f_r_t1_1_1.jpg','../img/index_4f_r_t1_1_2.jpg','../img/index_4f_r_t1_1_3.jpg','../img/index_4f_r_t1_1_4.jpg'],
+            width: 399,
+            height: 243,
+            type:'horizontal',
+            showButton:false,
+            duration:3000
+        })
     })
 })

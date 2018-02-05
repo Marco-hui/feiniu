@@ -77,9 +77,21 @@
                 float: left;
                 .content0{
                     display: none;
-                    ul{
+                    &>ul{
                         width: 1000px;
-                        li{float: left;border-right:1px solid #ddd;border-bottom:1px solid #ddd;}
+                        &>li{float: left;border-right:1px solid #ddd;border-bottom:1px solid #ddd;}
+                    }
+                }
+                .content2{
+                    &>ul>li{
+                        width: 200px;height: 244px;padding:10px 19px 0 20px;
+                        a.name{display: block;width: 160px;height: 36px;line-height: 18px;margin-top: 7px;font-size:12px;color:$fontC;}
+                        b.price{
+                            display: block;height: 18px;line-height: 18px;overflow: hidden;
+                            i{font-size:14px;color:#d7063b;font-style: normal;}
+                            span._price{font-size:16px;color:#d7063b;}
+                        }
+                        &:hover a{color:$hoverC;}
                     }
                 }
             }
@@ -120,25 +132,28 @@
     .main0_1{
         .main0_m{
             .main0_m_l{
-                 width: 390px;background: url(../img/index_3f_l1.jpg) no-repeat 0 0;padding-top:244px;
-            }
-            a{
-                font-size:12px;color:$fontC;display: block;
-                &:hover{text-decoration: underline;color:$hoverC;}
-            }
-            .main0_m_l_m{
-                height: 65px;background: #FEDCEC;padding-left:25px;padding-top:13px;line-height: 20px;
-            }
-            .main0_m_l_b{
-                height: 180px;padding:22px 25px;background: #FEEAF3;
-                &>div{
-                    float: left;width: 150px;
-                    &.left{margin-right: 30px;}
-                    .l1 li a{font-size:14px;line-height: 25px;}
-                    .l2 li{
-                        float: left;margin-right: 15px;line-height: 28px;
+                width: 390px;background: url(../img/index_3f_l1.jpg) no-repeat 0 0;padding-top:244px;
+                a{
+                    font-size:12px;color:$fontC;display: block;
+                    &:hover{text-decoration: underline;color:$hoverC;}
+                }
+                .main0_m_l_m{
+                    height: 65px;background: #FEDCEC;padding-left:25px;padding-top:13px;line-height: 20px;
+                }
+                .main0_m_l_b{
+                    height: 180px;padding:22px 25px;background: #FEEAF3;
+                    &>div{
+                        float: left;width: 150px;
+                        &.left{margin-right: 30px;}
+                        .l1 li a{font-size:14px;line-height: 25px;}
+                        .l2 li{
+                            float: left;margin-right: 15px;line-height: 28px;
+                        }
                     }
                 }
+            }
+            .main0_m_r{
+                .content0>ul{width: 800px;}
             }
         }
     }

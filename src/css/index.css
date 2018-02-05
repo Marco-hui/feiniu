@@ -66,9 +66,21 @@
 
 #main .main0 .main0_m .main0_m_r .content0 { display: none; }
 
-#main .main0 .main0_m .main0_m_r .content0 ul { width: 1000px; }
+#main .main0 .main0_m .main0_m_r .content0 > ul { width: 1000px; }
 
-#main .main0 .main0_m .main0_m_r .content0 ul li { float: left; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; }
+#main .main0 .main0_m .main0_m_r .content0 > ul > li { float: left; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; }
+
+#main .main0 .main0_m .main0_m_r .content2 > ul > li { width: 200px; height: 244px; padding: 10px 19px 0 20px; }
+
+#main .main0 .main0_m .main0_m_r .content2 > ul > li a.name { display: block; width: 160px; height: 36px; line-height: 18px; margin-top: 7px; font-size: 12px; color: #666; }
+
+#main .main0 .main0_m .main0_m_r .content2 > ul > li b.price { display: block; height: 18px; line-height: 18px; overflow: hidden; }
+
+#main .main0 .main0_m .main0_m_r .content2 > ul > li b.price i { font-size: 14px; color: #d7063b; font-style: normal; }
+
+#main .main0 .main0_m .main0_m_r .content2 > ul > li b.price span._price { font-size: 16px; color: #d7063b; }
+
+#main .main0 .main0_m .main0_m_r .content2 > ul > li:hover a { color: #D7063B; }
 
 #main .main0 .main0_b { margin: 25px 0 14px 0; }
 
@@ -112,21 +124,23 @@
 
 #main .main0_1 .main0_m .main0_m_l { width: 390px; background: url(../img/index_3f_l1.jpg) no-repeat 0 0; padding-top: 244px; }
 
-#main .main0_1 .main0_m a { font-size: 12px; color: #666; display: block; }
+#main .main0_1 .main0_m .main0_m_l a { font-size: 12px; color: #666; display: block; }
 
-#main .main0_1 .main0_m a:hover { text-decoration: underline; color: #D7063B; }
+#main .main0_1 .main0_m .main0_m_l a:hover { text-decoration: underline; color: #D7063B; }
 
-#main .main0_1 .main0_m .main0_m_l_m { height: 65px; background: #FEDCEC; padding-left: 25px; padding-top: 13px; line-height: 20px; }
+#main .main0_1 .main0_m .main0_m_l .main0_m_l_m { height: 65px; background: #FEDCEC; padding-left: 25px; padding-top: 13px; line-height: 20px; }
 
-#main .main0_1 .main0_m .main0_m_l_b { height: 180px; padding: 22px 25px; background: #FEEAF3; }
+#main .main0_1 .main0_m .main0_m_l .main0_m_l_b { height: 180px; padding: 22px 25px; background: #FEEAF3; }
 
-#main .main0_1 .main0_m .main0_m_l_b > div { float: left; width: 150px; }
+#main .main0_1 .main0_m .main0_m_l .main0_m_l_b > div { float: left; width: 150px; }
 
-#main .main0_1 .main0_m .main0_m_l_b > div.left { margin-right: 30px; }
+#main .main0_1 .main0_m .main0_m_l .main0_m_l_b > div.left { margin-right: 30px; }
 
-#main .main0_1 .main0_m .main0_m_l_b > div .l1 li a { font-size: 14px; line-height: 25px; }
+#main .main0_1 .main0_m .main0_m_l .main0_m_l_b > div .l1 li a { font-size: 14px; line-height: 25px; }
 
-#main .main0_1 .main0_m .main0_m_l_b > div .l2 li { float: left; margin-right: 15px; line-height: 28px; }
+#main .main0_1 .main0_m .main0_m_l .main0_m_l_b > div .l2 li { float: left; margin-right: 15px; line-height: 28px; }
+
+#main .main0_1 .main0_m .main0_m_r .content0 > ul { width: 800px; }
 
 #main #main2 .main0_m .main0_m_l { background: url(../img/index_2f_l1.jpg) no-repeat 0 0; }
 
