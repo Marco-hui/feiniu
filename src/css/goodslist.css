@@ -1,6 +1,140 @@
 #header { border-bottom: 2px solid #333; }
 
-#main { width: 100%; height: 2000px; }
+#filter { margin-bottom: 10px; }
+
+#filter .top { height: 40px; padding: 9px 0; }
+
+#filter .top > div { font-size: 12px; color: #CFCFCF; float: left; }
+
+#filter .top > div p { float: left; margin-right: 5px; }
+
+#filter .top > div p span { color: #666; height: 22px; line-height: 22px; }
+
+#filter .top > div label { display: inline-block; float: left; }
+
+#filter .top > div label input { width: 130px; height: 22px; border: 1px solid #CFCFCF; border-right: 0 none; float: left; padding-left: 7px; }
+
+#filter .top > div label button { width: 20px; height: 22px; border: 1px solid #CFCFCF; border-left: 0 none; float: left; background: url(img/icon_3.png) no-repeat -22px -26px; cursor: pointer; }
+
+#filter .top a.btn_cleanAll { float: right; display: block; line-height: 22px; color: #333; font-size: 12px; }
+
+#filter .top a.btn_cleanAll:hover { text-decoration: underline; color: #D7063B; }
+
+#filter .table table { border: 2px solid #ccc; }
+
+#filter .table table tr { border-bottom: 1px dashed #ccc; }
+
+#filter .table table tr td { padding: 5px 0; line-height: 30px; font-size: 12px; }
+
+#filter .table table tr td:first-child { width: 132px; background: #F7F7F7; padding-right: 15px; text-align: right; color: #999; }
+
+#filter .table table tr td:last-child { width: 1056px; background: #fff; padding-left: 10px; color: #333; }
+
+#filter .table table tr:nth-child(3) td.brand ul { width: 930px; }
+
+#filter .table table tr:nth-child(3) td.brand ul li { float: left; border: 1px solid #ccc; margin: -1px -1px 0 0; width: 117px; height: 56px; }
+
+#filter .table table tr:nth-child(3) td.brand ul li a { display: block; height: 54px; line-height: 54px; text-align: center; padding: 0 15px; }
+
+#filter .table table tr:nth-child(3) td.brand ul li:hover a { border: 2px solid #D7063B; line-height: 50px; }
+
+#filter .table table tr:nth-child(3) td.brand > div { width: 130px; float: right; }
+
+#filter .table table tr:nth-child(3) td.brand > div button { margin: 0; padding: 0; width: 50px; height: 20px; line-height: 20px; text-align: center; margin: 5px; margin-left: 10px; cursor: pointer; }
+
+#filter .table table tr:nth-child(3) td.brand > div span { padding: 0 5px; margin: 5px; cursor: pointer; }
+
+#filter .table table tr:nth-child(3) td.brand > div span i { font-size: 12px; margin-left: 3px; }
+
+#filter .table table tr:nth-child(3) td.brand > div span:hover { color: #D7063B; }
+
+#filter .table table tr:nth-child(4) td.country ul li { float: left; }
+
+#filter .table table tr:nth-child(4) td.country ul li a { display: inline-block; height: 40px; line-height: 40px; padding: 0 15px; }
+
+#filter .table table tr:nth-child(4) td.country ul li a:hover { color: #D7063B; }
+
+#filter .table table tr:nth-child(4) td.country ul li button { margin: 0; padding: 0; width: 50px; height: 20px; line-height: 20px; text-align: center; margin: 10px; margin-left: 20px; cursor: pointer; }
+
+#filter .table table tr:nth-child(4) td.country ul li span { padding: 0 5px; margin: 5px 10px; cursor: pointer; }
+
+#filter .table table tr:nth-child(4) td.country ul li span i { font-size: 12px; margin-left: 3px; }
+
+#filter .table table tr:nth-child(4) td.country ul li span:hover { color: #D7063B; }
+
+#filter .table table tr:nth-child(5) td.price_filter ul li { float: left; }
+
+#filter .table table tr:nth-child(5) td.price_filter ul li a { display: inline-block; height: 40px; line-height: 40px; padding: 0 15px; }
+
+#filter .table table tr:nth-child(5) td.price_filter ul li a:hover { color: #D7063B; }
+
+#filter .table table tr:nth-child(5) td.price_filter ul li input { width: 40px; height: 22px; margin: 9px 5px; text-align: center; }
+
+#filter .table table tr:last-child td.more ul li { float: left; }
+
+#filter .table table tr:last-child td.more ul li span { display: inline-block; height: 40px; line-height: 40px; padding: 0 15px; cursor: pointer; }
+
+#filter .table table tr:last-child td.more ul li span i { font-size: 12px; margin-left: 3px; }
+
+#filter .table table tr:last-child td.more ul li span:hover { color: #D7063B; }
+
+#main { margin-bottom: 60px; }
+
+#main .main_l { width: 180px; border: 1px solid #ccc; }
+
+#main .main_l h4 { height: 36px; line-height: 36px; font-size: 14px; color: #333; padding-left: 10px; background: #FAFAFA; border-bottom: 1px solid #ccc; }
+
+#main .main_l #main_history ul li { padding: 13px; overflow: hidden; border-bottom: 1px dashed #ccc; }
+
+#main .main_l #main_history ul li .photo { float: left; margin-right: 10px; }
+
+#main .main_l #main_history ul li .photo img { width: 50px; height: 50px; }
+
+#main .main_l #main_history ul li p { float: left; width: 80px; font-size: 12px; }
+
+#main .main_l #main_history ul li p a:hover { text-decoration: underline; color: #D7063B; height: 32px; overflow: hidden; }
+
+#main .main_l #main_history ul li p span { color: #D7063B; }
+
+#main .main_l #main_history ul li:last-child { border: 0 none; }
+
+#main .main_r { width: 1000px; }
+
+#main .main_r .sort { padding: 5px; background: #E0E0E0; }
+
+#main .main_r .sort ul { border-top: 1px solid #ccc; border-left: 1px solid #ccc; }
+
+#main .main_r .sort ul li { float: left; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 0 12px; font-size: 12px; height: 26px; background: #fff; }
+
+#main .main_r .sort ul li span { line-height: 26px; cursor: pointer; }
+
+#main .main_r .sort ul li:nth-child(3) span { position: relative; padding-right: 20px; }
+
+#main .main_r .sort ul li:nth-child(3) span i { position: absolute; right: 0px; top: -3px; font-size: 12px; }
+
+#main .main_r .sort ul li:nth-child(3) span i.down { top: 4px; }
+
+#main .main_r .sort ul li:hover span { color: #D7063B; }
+
+#main .main_r .sort ul li:last-child { margin-left: 5px; border-left: 1px solid #ccc; }
+
+#main .main_r .sort ul li:last-child label { display: inline-block; height: 26px; line-height: 26px; vertical-align: middle; }
+
+#main .main_r .sort ul li:last-child select { vertical-align: middle; }
+
+#main .main_r .sort .all { font-size: 14px; height: 27px; line-height: 27px; }
+
+#main .main_r .sort .all .all_num { margin-right: 10px; }
+
+#main .main_r .sort .all .all_num span { color: #58bc58; }
+
+#main .main_r .sort .all .all_page .left, #main .main_r .sort .all .all_page .right { width: 20px; height: 20px; background: #fff; text-align: center; line-height: 17px; vertical-align: middle; border: 1px solid #ccc; margin-top: -2px; cursor: pointer; }
+
+#main .main_r .sort .all .all_page .center b.now { color: #f00; }
+
+#main .main_r .other { height: 38px; padding: 9px 5px; background: #F3F3F3; font-size: 14px; }
+
+#main .main_r .other label { margin-right: 20px; }
 
 #aside { position: fixed; right: 0; bottom: 0; display: none; }
 

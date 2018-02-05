@@ -9,7 +9,7 @@ img{border:0 none;display: block;}
 select, input { vertical-align:middle;}
 textarea { resize:none; } 
 table { border-collapse:collapse;}
-input,button{outline-style:none;} 
+input,button,select{outline-style:none;} 
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {

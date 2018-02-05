@@ -10,8 +10,167 @@
 </head>
 <body>
     <div id="header"></div>
-    <div id="filter"></div>
-    <div id="main"></div>
+    <div id="filter">
+        <div class="container">
+            <div class="top">
+                <div>
+                    <p><span>搜索结果 </span> &gt; <span> 进口 </span> &gt;</p>
+                    <label><input type="text" placeholder="在结果中查找"/><button></button></label>
+                </div>
+                <a href="goodslist.html" class="btn_cleanAll">清空筛选条件</a>
+            </div>
+            <div class="table">
+                <table>
+                    <tr>
+                        <td>进口饼干/糕点</td>
+                        <td><a href="#">进口饼干</a></td>
+                    </tr>
+                    <tr>
+                        <td>饼干糕点</td>
+                        <td><a href="#">饼干</a></td>
+                    </tr>
+                    <tr>
+                        <td>品牌</td>
+                        <td class="brand">
+                            <ul class="clfix">
+                                <li><a href="#">丽芝士</a></li>
+                                <li><a href="#">EDO Pack</a></li>
+                                <li><a href="#">珍珍</a></li>
+                                <li><a href="#">茱蒂丝</a></li>
+                                <li><a href="#">Aji</a></li>
+                                <li><a href="#">mixx</a></li>
+                                <li><a href="#">北田</a></li>
+                                <li><a href="#">御之味</a></li>
+                                <li><a href="#">谷优</a></li>
+                                <li><a href="#">闲趣</a></li>
+                                <li><a href="#">宏亚蜜兰诺</a></li>
+                                <li><a href="#">三立</a></li>
+                                <li><a href="#">明治</a></li>
+                                <li><a href="#">tatawa</a></li>
+                                <li><a href="#">万恩利</a></li>
+                                <li><a href="#">GPR</a></li>
+                            </ul>
+                            <div>
+                                <button>+ 多选</button>
+                                <span>更多<i class="iconfont">&#xe615;</i></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>生产国</td>
+                        <td class="country">
+                            <ul class="clfix">
+                                <li><a href="#">瑞士</a></li>
+                                <li><a href="#">印度尼西亚</a></li>
+                                <li><a href="#">港澳地区</a></li>
+                                <li><a href="#">德国</a></li>
+                                <li><a href="#">其他</a></li>
+                                <li><a href="#">台湾地区</a></li>
+                                <li><a href="#">马来西亚</a></li>
+                                <li><a href="#">比利时</a></li>
+                                <li><a href="#">韩国</a></li>
+                                <li><a href="#">菲律宾</a></li>
+                                <li><a href="#">西班牙</a></li>
+                                <li><a href="#">意大利</a></li>
+                                <li><a href="#">波兰</a></li>
+                                <li><button>+ 多选</button></li>
+                                <li><span>更多<i class="iconfont">&#xe615;</i></span></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>价格</td>
+                        <td class="price_filter">
+                            <ul class="clfix">
+                                <li><a href="#">10 元以下</a></li>
+                                <li><a href="#">10-14 元</a></li>
+                                <li><a href="#">14-16 元</a></li>
+                                <li><a href="#">16-19 元</a></li>
+                                <li><a href="#">19-30 元</a></li>
+                                <li><a href="#">30 元以上</a></li>
+                                <li class="v-price"><input type="text" class="u-price"/> - <input type="text" class="d-price"/> <button>确认</button></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><i class="iconfont">&#xe790;</i>更多筛选项</td>
+                        <td class="more">
+                            <ul class="clfix">
+                                <li><span>规格<i class="iconfont">&#xe615;</i></span></li>
+                                <li><span>包装<i class="iconfont">&#xe615;</i></span></li>
+                                <li><span>口味<i class="iconfont">&#xe615;</i></span></li>
+                                <li><span>种类<i class="iconfont">&#xe615;</i></span></li>
+                                <li><span>其他分类<i class="iconfont">&#xe615;</i></span></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div class="container clfix">
+            <div class="main_l fl">
+                <h4>浏览记录</h4>
+                <div id="main_history">
+                <!-- 用cookie -->
+                    <ul>
+                        <li>
+                            <div class="photo"><a href="#"><img src="../img/goodslist_likes_1.jpg" /></a></div>
+                            <p><a href="#">太阳神猴头菇胃肠保健口服</a><span>￥25</span></p>
+                        </li>
+                        <li>
+                            <div class="photo"><a href="#"><img src="../img/goodslist_likes_1.jpg" alt="" /></a></div>
+                            <p><a href="#">太阳神猴头菇胃肠保健口服</a><span>￥25</span></p>
+                        </li>
+                        <li>
+                            <div class="photo"><a href="#"><img src="../img/goodslist_likes_1.jpg" alt="" /></a></div>
+                            <p><a href="#">太阳神猴头菇胃肠保健口服</a><span>￥25</span></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main_r fr">
+                <div class="sort clfix">
+                    <ul class="fl">
+                        <li><span>综合</span></li>
+                        <li><span>销量</span></li>
+                        <li><span>价格<i class="up iconfont">&#xe78f;</i><i class="down iconfont">&#xe791;</i></span></li>
+                        <li><span>评论</span></li>
+                        <li><span>新品</span></li>
+                        <li class="place">
+                            <label>收货地：</label>
+                            <select name="province" id="sort_province">
+                                <option value="请选择">请选择</option>
+                            </select> -
+                            <select name="city" id="sort_city">
+                                <option value="请选择">请选择</option>
+                            </select> -
+                            <select name="county" id="sort_county">
+                                <option value="请选择">请选择</option>
+                            </select>
+                        </li>
+                    </ul>
+                    <div class="all fr">
+                        <p class="all_num fl">共 <span>9999</span> 个商品</p>
+                        <div class="all_page fl">
+                            <span class="left">&lt;</span>
+                            <span class="center"><b class="now"> 1 </b> / <b class="total"> 65 </b></span>
+                            <span class="right">&gt;</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="other">
+                    <label for="other1"><input type="checkbox" id="other1"/> 飞牛自营</label>
+                    <label for="other2"><input type="checkbox" id="other2"/> 飞牛商城(商家直送)</label>
+                    <label for="other3"><input type="checkbox" id="other3"/> 优惠促销</label>
+                    <label for="other4"><input type="checkbox" id="other4"/> 仅显示有货</label>
+                </div>
+                <div class="goodslist"></div>
+                <div class="page"></div>
+            </div>
+        </div>
+    </div>
     <div id="aside">
         <span class="iconfont">&#xe649;</span>
     </div>
