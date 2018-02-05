@@ -256,6 +256,8 @@
 
 #header #header_bottom .header_bottom_all > ul > li:hover .header_bottom_all_twoNav { display: block; }
 
+#header #header_bottom .header_bottom_all:hover ul { display: block; }
+
 #header #header_bottom .header_bottom_other ul li { float: left; padding: 0 15px; height: 40px; line-height: 40px; position: relative; }
 
 #header #header_bottom .header_bottom_other ul li a { font-size: 15px; color: #333333; font-weight: bold; }
