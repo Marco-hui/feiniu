@@ -87,5 +87,44 @@ require(['config'],function(){
                 city.innerHTML="<option value='请选择'>请选择</option>"+option_city;
             }
         },'json')
+
+        // 加载goods.json数据，生成商品列表
+        function createGoodslist(){
+            // 进入页面默认显示第一页
+            var page=1;
+            var qty=12;
+            
+            $.get("../api/goods.php",{page:page,qty:qty},function(res){
+                var arr=res.arr;
+                var $goods_ul=$('<ul/>');
+                $goods_ul.html(arr.map(function(item){
+                    return `<li id="${item.id}">
+                        <a href="details.html?id=${item.id}"><img src="${item.imgurl}"/></a>
+                        <p class="price">￥${item.price}</p>
+                        <a href="details.html?id=${item.id}" class="name">${item.name}</a>
+                        <p class="add2car"><button>加入购物车</button></p>
+                        <p class="comment">已有 <span> ${item.comment} </span> 人评价</p>
+                        <p class="shop">${item.shop}</p>
+                    </li>`
+                }).join(''))
+                $('#main .goodslist').append($goods_ul);
+
+                var pageNum=Math.ceil(res.total/res.qty);
+                var $page_ul=$('<ul/>');
+                var html='<li><span> &lt; 上一页 </span></li>';
+                for(var i=0;i<pageNum;i++){
+                    html += `<li><span>${i+1}</span></li>`;
+                }
+                html+='<li><span> 下一页 &gt;</span></li>';
+                $page_ul.html(html);
+                $('#main .main_r .page').append($page_ul);
+                $page_ul.children().eq(res.page).addClass('active');
+            },'json')
+            
+            // $('#main .main_r .page ul').on('click','li',function(){
+            //     console.log(this);
+            // })
+        }
+        createGoodslist();
     })
 })

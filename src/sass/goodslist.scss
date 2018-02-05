@@ -152,6 +152,38 @@
         .other{
             height: 38px;padding:9px 5px;background: #F3F3F3;font-size:14px;
             label{margin-right: 20px;}
+            margin-bottom: 10px;
+        }
+        .goodslist{
+            ul{
+                li{
+                    width: 250px;height: 380px;margin-bottom: 10px;padding:1px 12px;float: left;
+                    img{margin: 0 auto;}
+                    p.price{font-size:18px;color:#f00;line-height: 30px;}
+                    a.name{
+                        display: block;height: 30px;line-height: 30px;overflow: hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px;color:#222;
+                        &:hover{color:$hoverC;}
+                    }
+                    p.add2car{margin: 10px 0;
+                        button{width: 100px;height: 30px;border:1px solid $borderC;background: #FFF0F2;color:#D7063B;font-size:12px;text-align: center;line-height: 30px;margin: 0 auto;display: block;cursor:pointer;}
+                    }
+                    p.comment{
+                        font-size:12px;margin-bottom: 10px;
+                        span{color:#2b9;font-weight: bold;}
+                    }
+                    p.shop{font-size:12px;color:#999;}
+                    &:hover{border:1px solid $hoverC;padding: 0 11px;}
+                }
+            }
+        }
+        .page{
+            ul{
+                li{
+                    float: left;border:1px solid $borderC;margin-right: 5px;cursor:pointer;
+                    span{padding:0 15px;height: 38px;line-height: 38px;}
+                    &.active{background: #f00;}
+                }
+            }
         }
     }
 }

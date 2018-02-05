@@ -132,9 +132,37 @@
 
 #main .main_r .sort .all .all_page .center b.now { color: #f00; }
 
-#main .main_r .other { height: 38px; padding: 9px 5px; background: #F3F3F3; font-size: 14px; }
+#main .main_r .other { height: 38px; padding: 9px 5px; background: #F3F3F3; font-size: 14px; margin-bottom: 10px; }
 
 #main .main_r .other label { margin-right: 20px; }
+
+#main .main_r .goodslist ul li { width: 250px; height: 380px; margin-bottom: 10px; padding: 1px 12px; float: left; }
+
+#main .main_r .goodslist ul li img { margin: 0 auto; }
+
+#main .main_r .goodslist ul li p.price { font-size: 18px; color: #f00; line-height: 30px; }
+
+#main .main_r .goodslist ul li a.name { display: block; height: 30px; line-height: 30px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; color: #222; }
+
+#main .main_r .goodslist ul li a.name:hover { color: #D7063B; }
+
+#main .main_r .goodslist ul li p.add2car { margin: 10px 0; }
+
+#main .main_r .goodslist ul li p.add2car button { width: 100px; height: 30px; border: 1px solid #ccc; background: #FFF0F2; color: #D7063B; font-size: 12px; text-align: center; line-height: 30px; margin: 0 auto; display: block; cursor: pointer; }
+
+#main .main_r .goodslist ul li p.comment { font-size: 12px; margin-bottom: 10px; }
+
+#main .main_r .goodslist ul li p.comment span { color: #2b9; font-weight: bold; }
+
+#main .main_r .goodslist ul li p.shop { font-size: 12px; color: #999; }
+
+#main .main_r .goodslist ul li:hover { border: 1px solid #D7063B; padding: 0 11px; }
+
+#main .main_r .page ul li { float: left; border: 1px solid #ccc; margin-right: 5px; cursor: pointer; }
+
+#main .main_r .page ul li span { padding: 0 15px; height: 38px; line-height: 38px; }
+
+#main .main_r .page ul li.active { background: #f00; }
 
 #aside { position: fixed; right: 0; bottom: 0; display: none; }
 

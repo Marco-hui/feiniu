@@ -2,6 +2,7 @@ require(['config'],function(){
     require(['jquery','common','same','mcarousel','jqueryui'],function($,com){
         // 加载header内容并处理路径问题
         $('#header').load('../html/head.html',function(){
+            Header();
             // 更改首页a标签中herf路径
             $("a[href='login.html']").attr('href','html/login.html');
             $("a[href='register.html']").attr('href','html/register.html');

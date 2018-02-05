@@ -1,8 +1,4 @@
 
-// 加载head内容
-$('#header').load('../html/head.html');
-
-// ajax加载生成省份列表
 function Header(){
     $.get('../api/data/region.json',function(res){
         var res=res.regions;
@@ -34,8 +30,11 @@ function Header(){
         })
     },'json')
 }
-Header();
-
-
+// 加载head内容
+$('#header').load('../html/head.html',function(){
+    // ajax加载生成省份列表
+    Header();
+});
+    
 // 加载footer内容
 $('#footer').load('../html/footer.html');
