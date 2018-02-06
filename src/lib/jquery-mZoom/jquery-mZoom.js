@@ -2,7 +2,7 @@
 * @Author: Marte
 * @Date:   2018-01-30 11:16:30
 * @Last Modified by:   Marte
-* @Last Modified time: 2018-01-30 16:57:28
+* @Last Modified time: 2018-02-06 19:57:55
 */
 
 ;(function($){
@@ -28,7 +28,7 @@
                 switch(opt.position){
                     case "right":
                         left=$small.offset().left + $small.outerWidth() + opt.gap;
-                        top=$small.offset().top;
+                        top=$small.css('top');
                         break;
                     case "bottom":
                         left=$small.offset().left;
@@ -50,7 +50,7 @@
 
                 var $bigImg=$('<img/>').attr('src',$smallImg.attr('data-big') || $smallImg[0].src);
                 $bigImg.appendTo($big);
-                $big.appendTo('body');
+                $big.insertAfter($small);
 
                 var $minzoom=$('<span/>').addClass('minzoom');
                 $minzoom.appendTo($small);

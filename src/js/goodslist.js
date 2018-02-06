@@ -183,7 +183,6 @@ require(['config'],function(){
 
             // 点击商品进入该商品的详情页并生成cookie，保存浏览记录
             $("#main .main_r .goodslist").on('click','a',function(e){
-                e.preventDefault();
                 var $currentLi=$(this).closest('li');
                 var currentId=$currentLi.prop('id');
                 for(var i=0;i<arr_history.length;i++){
@@ -208,7 +207,7 @@ require(['config'],function(){
                 date.setDate(date.getDate()+7);
                 com.Cookie.set('goodslist',json_history,{expires:date.toUTCString(),path:'/'});
 
-                // console.log();
+                // return false; //阻止a标签跳转（浏览器默认行为），测试时添加
             })
         }
         history();
