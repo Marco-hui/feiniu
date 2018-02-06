@@ -1,5 +1,5 @@
 <?php
-    include 'connect.php';
+    require('connect.php');
     $username = isset($_GET['username']) ? $_GET['username'] : '';
     $password = isset($_GET['password']) ? $_GET['password'] : '';
     $isreg = isset($_GET['isreg']) ? $_GET['isreg'] : false;
@@ -9,16 +9,16 @@
 
     $result = $conn->query($sql);
     
-    if($result->num_rows>0){
+    if($result->num_rows>0){ //判断用户是否已经注册
         echo "fail";
     }else{
-        if($isreg){
+        if($isreg){ 
             // 密码md5加密
             $password = md5($password);
             // echo $password;
             $sql="insert into user (username,password) values('$username','$password')";
             $result = $conn->query($sql);
-            if($result){
+            if($result){ // 判断是否注册成功
                 echo "ok";
             }else{
                 // echo "Error: " . $sql . "<br>" . $conn->error;

@@ -1,5 +1,5 @@
 <?php
-    include 'connect.php';
+    require('connect.php');
     
     $username = isset($_GET['username']) ? $_GET['username'] : '';
     $password = isset($_GET['password']) ? $_GET['password'] : '';
