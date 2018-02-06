@@ -25,28 +25,6 @@ require(['config'],function(){
         }
         toTop();
 
-        // likes部分
-        function likes(){
-            // 设置ul的宽度
-            var $bottom_ul=$('#likes .bottom_ul');
-            var len=$bottom_ul.children().length;
-            var li_W=parseFloat($bottom_ul.children().eq(0).css('width'));
-            var ul_W= len * li_W;
-            $bottom_ul.css('width',ul_W);
-
-            // 点击更换一批
-            var idx=0; // 默认显示第一批
-            $('#likes .top .btn_change').click(function(){
-                idx++;
-                if(idx >= len){
-                    idx=0;
-                }
-                var left = - li_W * idx ;
-                $bottom_ul.css('left',left);
-            })
-        }
-        likes();
-
         // 收货地 三级联动
         $.get("../api/data/region.json",function(res){
             var data=res.regions;
@@ -187,5 +165,74 @@ require(['config'],function(){
             })
         }
         createGoodslist();
+
+        // 浏览记录
+        function history(){
+            // 进入页面读取cookie,拿到商品浏览历史的数据并在页面生成浏览历史
+            var arr_history=[];
+            var cookies_history=com.Cookie.get('goodslist');
+            if(cookies_history != "") arr_history=JSON.parse(cookies_history);
+            var $ul=$('<ul/>')
+            $ul.html(arr_history.map(item=>{
+                return `<li>
+                    <div class="photo"><a href="#"><img src="${item.imgurl}" /></a></div>
+                    <p><a href="#">${item.name}</a><span>￥${item.price}</span></p>
+                </li>`
+            }).join(''))
+            $ul.appendTo($('#main_history'));
+
+            // 点击商品进入该商品的详情页并生成cookie，保存浏览记录
+            $("#main .main_r .goodslist").on('click','a',function(e){
+                e.preventDefault();
+                var $currentLi=$(this).closest('li');
+                var currentId=$currentLi.prop('id');
+                for(var i=0;i<arr_history.length;i++){
+                    if(arr_history[i].id == currentId){
+                        arr_history.splice(i,1);
+                        break;  // 找到就停止循环
+                    }
+                }
+
+                var goods={
+                    id:currentId,
+                    imgurl:$currentLi.find('img').prop('src'),
+                    price:$currentLi.find('.price').text().slice(1),
+                    name:$currentLi.find('.name').text(),
+                    comment:$currentLi.find('.comment span').text(),
+                    shop:$currentLi.find('.shop').text()
+                }
+                arr_history.unshift(goods);
+
+                var json_history=JSON.stringify(arr_history);
+                var date=new Date();
+                date.setDate(date.getDate()+7);
+                com.Cookie.set('goodslist',json_history,{expires:date.toUTCString(),path:'/'});
+
+                // console.log();
+            })
+        }
+        history();
+
+        // likes部分
+        function likes(){
+            // 设置ul的宽度
+            var $bottom_ul=$('#likes .bottom_ul');
+            var len=$bottom_ul.children().length;
+            var li_W=parseFloat($bottom_ul.children().eq(0).css('width'));
+            var ul_W= len * li_W;
+            $bottom_ul.css('width',ul_W);
+
+            // 点击更换一批
+            var idx=0; // 默认显示第一批
+            $('#likes .top .btn_change').click(function(){
+                idx++;
+                if(idx >= len){
+                    idx=0;
+                }
+                var left = - li_W * idx ;
+                $bottom_ul.css('left',left);
+            })
+        }
+        likes();
     })
 })
