@@ -164,6 +164,8 @@
 
 #main .main_r .page ul li.active { background: #f00; }
 
+#main .main_r .page ul li.active span { color: #fff; }
+
 #aside { position: fixed; right: 0; bottom: 0; display: none; }
 
 #aside span { width: 36px; height: 30px; border: 1px solid #f60; background: #8d5; color: #fff; cursor: pointer; text-align: center; line-height: 30px; font-size: 30px; }

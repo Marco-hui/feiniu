@@ -181,7 +181,10 @@
                 li{
                     float: left;border:1px solid $borderC;margin-right: 5px;cursor:pointer;
                     span{padding:0 15px;height: 38px;line-height: 38px;}
-                    &.active{background: #f00;}
+                    &.active{
+                        background: #f00;
+                        span{color:#fff;}
+                    }
                 }
             }
         }

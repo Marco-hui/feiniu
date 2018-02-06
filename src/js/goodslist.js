@@ -94,7 +94,7 @@ require(['config'],function(){
             var page=1;
             var qty=12;
             
-            $.get("../api/goods.php",{page:page,qty:qty},function(res){
+            function callback(res){
                 var arr=res.arr;
                 var $goods_ul=$('<ul/>');
                 $goods_ul.html(arr.map(function(item){
@@ -107,23 +107,84 @@ require(['config'],function(){
                         <p class="shop">${item.shop}</p>
                     </li>`
                 }).join(''))
+                $('#main .goodslist').html('');
                 $('#main .goodslist').append($goods_ul);
 
                 var pageNum=Math.ceil(res.total/res.qty);
-                var $page_ul=$('<ul/>');
+                var $page_ul=$('<ul class="clfix"></ul>');
                 var html='<li><span> &lt; 上一页 </span></li>';
                 for(var i=0;i<pageNum;i++){
                     html += `<li><span>${i+1}</span></li>`;
                 }
                 html+='<li><span> 下一页 &gt;</span></li>';
                 $page_ul.html(html);
+                $('#main .main_r .page').html('');
                 $('#main .main_r .page').append($page_ul);
                 $page_ul.children().eq(res.page).addClass('active');
+
+                // 如果显示的是第一页或最后一页，“上一页”或“下一页”按钮变灰
+                if(res.page==1){
+                    $page_ul.children().eq(0).css('background','#ccc');
+                }else if(res.page==pageNum){
+                    $page_ul.children().eq(pageNum+1).css('background','#ccc');
+                }
+
+                // main_r sort栏 显示总商品数
+                $('#main .main_r .all_num span').text(res.total);
+                // main_r sort栏 显示当前页码和总页码
+                $('#main .main_r .all .now').text(res.page);
+                $('#main .main_r .all .total').text(pageNum);
+            }
+
+            $.get("../api/goods.php",{page:page,qty:qty},function(res){
+                callback(res);
             },'json')
             
-            // $('#main .main_r .page ul').on('click','li',function(){
-            //     console.log(this);
-            // })
+            // 点击main_r sort栏左右按钮更换页面
+            $('#main .main_r .all_page').on('click','span',function(e){
+                var $page_ul=$('#main .main_r .page ul');
+                var current_Page=$page_ul.find('.active').index(); //点击之前的页码
+                var len=$page_ul.children().length;
+                if(e.target.className==='left'){
+                    current_Page--;
+                    if(current_Page<=0){
+                        current_Page=1;
+                    }
+                }else if(e.target.className==='right'){
+                    current_Page++;
+                    if(current_Page>=len-1){
+                        current_Page=len-2;
+                    }
+                }
+                $page_ul.children().eq(current_Page).addClass('active').siblings().removeClass('active');
+                $.get('../api/goods.php',{page:current_Page,qty:qty},function(res){
+                    callback(res);
+                },'json');
+            })
+
+            // 点击page页码
+            $('#main .main_r .page').on('click','li',function(){
+                var $page_ul=$(this).parent();
+                var current_Page=$page_ul.find('.active').index(); //点击之前的页码
+                var click_page=$(this).index(); //点击的页码
+                var len=$page_ul.children().length;
+
+                if(click_page==0){ //点击上一页
+                    click_page=current_Page-1;
+                    if(click_page<=0){
+                        click_page=1;
+                    }
+                }else if(click_page == len-1){ // 点击下一页
+                    click_page=current_Page+1;
+                    if(click_page>=len-1){
+                        click_page=len-2;
+                    }
+                }
+                $page_ul.children().eq(click_page).addClass('active').siblings().removeClass('active');
+                $.get('../api/goods.php',{page:click_page,qty:qty},function(res){
+                    callback(res);
+                },'json');
+            })
         }
         createGoodslist();
     })
