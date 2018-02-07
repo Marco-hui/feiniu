@@ -164,5 +164,51 @@ require(['config'],function(){
             showButton:false,
             duration:3000
         })
+
+        // 获取数据库首页商品数据
+        $.get('../api/index_goods.php',function(idxgoods){
+            var $idxGoods=$('#main .main0 .main0_m_r .content3');
+            for(var i=0;i<$idxGoods.length;i++){
+                var $ul=$('<ul class="clfix"></ul>');
+                var html=idxgoods.map(function(items,idx){
+                    // if(idx>=10*i && idx<10*(i+1))
+                        var start,end;
+                        switch(i){
+                            case 0:
+                            case 1:
+                                start=10*i;
+                                end=10*(i+1); // 1F_tap2、2F_tap2 各有10个商品
+                                break;
+                            case 2:
+                                start=20;
+                                end= 20 + 12 ; // 3F_tap2 有12个商品
+                                break;
+                            case 3:
+                                start=32;
+                                end= 32 + 8 ; // 4F_tap2 有8个商品
+                                break;
+                            case 4:
+                                start=40;
+                                end= 40 + 12 ; // 5F_tap2 有12个商品
+                                break;
+                            case 5:
+                                start=52;
+                                end= 52 + 10 ; // 5F_tap2 有10个商品
+                                break;
+                            default:
+                                break;
+                        }
+                        if(idx>=start && idx<end){
+                            return `<li id="${items.id}">
+                                <a href="#"><img src="${items.imgurl}"/></a>
+                                <a href="#" class="name">${items.name}</a>
+                                <b class="price"><i>￥</i><span class="_price">${items.price}</span></b>
+                            </li>`
+                        }
+                    }).join('');
+                $ul.html(html);
+                $idxGoods.eq(i).append($ul);
+            }
+        },'json')
     })
 })

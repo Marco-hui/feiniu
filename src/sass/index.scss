@@ -85,7 +85,8 @@
                 .content2{
                     &>ul>li{
                         width: 200px;height: 244px;padding:10px 19px 0 20px;
-                        a.name{display: block;width: 160px;height: 36px;line-height: 18px;margin-top: 7px;font-size:12px;color:$fontC;}
+                        img{width: 160px;height: 160px;}
+                        a.name{display: block;width: 160px;height: 36px;line-height: 18px;margin-top: 7px;font-size:12px;color:$fontC;overflow: hidden;}
                         b.price{
                             display: block;height: 18px;line-height: 18px;overflow: hidden;
                             i{font-size:14px;color:#d7063b;font-style: normal;}
