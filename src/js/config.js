@@ -5,13 +5,17 @@ require.config({
         jqueryui:"../lib/jquery-ui-1.12.1/jquery-ui",
         bootstrap:"../lib/bootstrap-3.3.7/js/bootstrap",
         mcarousel:"../lib/jquery-mCarousel/jquery-mcarousel",
-        zoom:"../lib/jquery-mZoom/jquery-mZoom"
+        zoom:"../lib/jquery-mZoom/jquery-mZoom",
+        index:"../index.html"
     },
     shim:{
         same:['jquery','common'],
         mcarousel:['jquery'],
         zoom:['jquery'],
         jqueryui:['jquery'],
-        bootstrap:['jquery']
+        bootstrap:['jquery'],
+        index:['same'],
+        goodslist:['same'],
+        details:['same']
     }
 });

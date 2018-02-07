@@ -16,7 +16,7 @@
 
 #main .container .main_l { position: relative; width: 451px; border-right: 1px solid #ccc; }
 
-#main .container .main_l .main_l_goods { width: 450px; border-bottom: 1px solid #e2e2e2; left: 0; top: 0; }
+#main .container .main_l .main_l_goods { width: 450px; border-bottom: 1px solid #e2e2e2; left: 0; top: 0; position: relative; }
 
 #main .container .main_l .main_l_goods img { width: 450px; height: 450px; }
 

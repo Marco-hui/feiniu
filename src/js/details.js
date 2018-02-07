@@ -50,13 +50,12 @@ require(['config'],function(){
         place(); // 代码在same.js里
 
         // 点击数量 “+” “-” 按钮选择数量,并计算价格
+        var $main_qty=$('#main .main_m_2 .qty'); 
+        var $sub=$main_qty.find('.sub'); // "-"
+        var $add=$main_qty.find('.add'); // "+"
+        var $subtotal=$main_qty.find('.subtotal');  // 小计
+        var $good_qty=$('#good_qty'); // 输入框
         function selectQty(){
-            var $main_qty=$('#main .main_m_2 .qty'); 
-            var $sub=$main_qty.find('.sub'); // "-"
-            var $add=$main_qty.find('.add'); // "+"
-            var $good_qty=$('#good_qty'); // 输入框
-            var $subtotal=$main_qty.find('.subtotal');  // 小计
-
             $subtotal.text(currentGoods.price);
             $sub.css('background',"#DEDEDE"); // 数量为1时，sub按钮不可用
 
@@ -81,9 +80,73 @@ require(['config'],function(){
                 qty == 1 ? $sub.css('background',"#DEDEDE") : $sub.css('background',"#fff");
                 $subtotal.text((currentGoods.price*qty).toFixed(2));
             })
-
         }
         selectQty();
+
+
+
+        // 商品加入购物车相关
+        function addToCar(){
+            // 进入页面获取购物车cookie
+            var car_goods=[];
+            var car=com.Cookie.get('car');
+            if(car != "") car_goods=JSON.parse(car);
+            
+            var $add2Car=$('#main .add2car');
+            var $goodsImg=$('#main .main_l_goods img');
+            var $icon_car=$('#header .header_middle_car_r i');
+            $add2Car.click(function(){
+                // 商品飞入购物车效果
+                var $copyImg=$goodsImg.clone();
+                $copyImg.css({
+                    position:"absolute",
+                    width:450,
+                    height:450,
+                    left:$goodsImg.offset().left,
+                    top:$goodsImg.offset().top
+                })
+                $copyImg.insertAfter($('#main'));
+                var target={
+                    width:30,
+                    height:30,
+                    left:$icon_car.offset().left,
+                    top:$icon_car.offset().top
+                }
+                $copyImg.animate(target,700,function(){
+                    $copyImg.remove();
+                });
+
+                // 判断当前商品是否已经存在cookie当中
+                for(var i=0;i<car_goods.length;i++){
+                    if(car_goods[i].id == currentId){
+                        car_goods[i].qty += $good_qty.val()*1;
+                        break;
+                    }
+                }
+
+                if(i == car_goods.length){
+                    console.log(i)
+                    var goods={
+                        id:currentId,
+                        imgurl:currentGoods.imgurl,
+                        name:currentGoods.name,
+                        price:currentGoods.price,
+                        qty:$good_qty.val(),
+                        subtotal:$subtotal.val()
+                    }
+
+                    // 添加到数组
+                    car_goods.push(goods);
+                }
+                car_goods=JSON.stringify(car_goods);
+                var date=new Date();
+                date.setDate(date.getDate()+30);
+                // 生成购物车cookie
+                com.Cookie.set('car',car_goods,{expires:date.toUTCString(),path:'/'});
+            })
+            
+        }
+        setTimeout(addToCar,500);
 
         // 相似商品
         likes();
@@ -103,7 +166,6 @@ require(['config'],function(){
             // tab_nav 吸顶
             var tabLeft=$tab_nav.offset().left;
             window.addEventListener('scroll',function(){
-                console.log(scrollY)
                 if(scrollY> 1160){
                     $tab_nav.css('left',tabLeft);
                     $tab_nav.addClass('fixed');
