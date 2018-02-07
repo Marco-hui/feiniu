@@ -87,5 +87,31 @@ require(['config'],function(){
 
         // 相似商品
         likes();
+
+        // section_r部分的tab标签切换效果
+        function sectionTab(){
+            var $tab_nav=$('#section .section_r .tab_nav');
+            var $tab_content=$('#section .section_r .tab_content');
+            $tab_nav.children().eq(0).addClass('active')
+            $tab_content.children().eq(0).show();
+            $tab_nav.on('click','li',function(){
+                var idx=$(this).index();
+                $(this).addClass('active').siblings().removeClass('active');
+                $tab_content.children().eq(idx).show().siblings().hide();
+            })
+
+            // tab_nav 吸顶
+            var tabLeft=$tab_nav.offset().left;
+            window.addEventListener('scroll',function(){
+                console.log(scrollY)
+                if(scrollY> 1160){
+                    $tab_nav.css('left',tabLeft);
+                    $tab_nav.addClass('fixed');
+                }else{
+                    $tab_nav.removeClass('fixed');
+                }
+            })
+        }
+        sectionTab();
     })
 })
