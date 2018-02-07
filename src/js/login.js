@@ -34,7 +34,7 @@ require(['config'],function(){
             $('#submit').css('opacity',1);
         })
         $('#submit').click(function(){
-            // 是否免登录
+            // 是否自动登录
             var isAuto=$('#autoLogin').prop('checked');
             var username=$('#username').val();
             var password=$('#pass').val();

@@ -176,7 +176,7 @@ require(['config'],function(){
             $ul.html(arr_history.map(item=>{
                 return `<li>
                     <div class="photo"><a href="#"><img src="${item.imgurl}" /></a></div>
-                    <p><a href="#">${item.name}</a><span>￥${item.price}</span></p>
+                    <p><a href="details.html?id=${item.id}">${item.name}</a><span>￥${item.price}</span></p>
                 </li>`
             }).join(''))
             $ul.appendTo($('#main_history'));

@@ -15,7 +15,6 @@
         if($isreg){ 
             // 密码md5加密
             $password = md5($password);
-            // echo $password;
             $sql="insert into user (username,password) values('$username','$password')";
             $result = $conn->query($sql);
             if($result){ // 判断是否注册成功

@@ -21,10 +21,11 @@ require(['config'],function(){
         // 根据id,显示相应图片
         var $main_l_goods=$('#main .main_l_goods');
         var $smallList=$('#main .main_l_smallList');
-        var imgurl_s="../img/"+currentId+"_1_s.jpg";
-        // var imgurl_m="../img/"+currentId+"_1_m.jpg"; // 高清图
-        var imgurl_m=currentGoods.imgurl; // 标准图
-        var imgurl_x="../img/"+currentId+"_1_x.jpg";
+        var imgurl_s="../img/g"+currentId+"_1_s.jpg";
+        // var imgurl_m="../img/g"+currentId+"_1_m.jpg"; // 高清图
+        // var imgurl_m=currentGoods.imgurl; // 标准图
+        var imgurl_m="../img/g"+currentId+"_1_x.jpg"; // 超清图
+        var imgurl_x="../img/g"+currentId+"_1_x.jpg";
         // try{
         //     $main_l_goods.find('img').attr({src:imgurl_m,'data-big':imgurl_x});
         // }catch(err){
@@ -43,7 +44,7 @@ require(['config'],function(){
         $smallList.on('click','li',function(){
             var $img=$(this).find('img');
             $(this).addClass('active').siblings().removeClass('active');
-            var src=$img.prop('src').slice(0,-5)+"m.jpg";
+            var src=$img.prop('src').slice(0,-5)+"x.jpg";
             $main_l_goods.find('img').attr({src:src,'data-big':$img[0].dataset.big});
         })
     })
