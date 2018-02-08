@@ -41,12 +41,14 @@ require(['config'],function(){
             $.get('../api/login.php',{username:username,password:password},function(data){
                 if(data==="ok"){
                     $('#main .pass_tip').hide();
-                    if(isAuto){
+                    if(isAuto){ //生成14天cookie
                         var date=new Date();
                         date.setDate(date.getDate()+14);
                         com.Cookie.set('username',username,{expires:date.toUTCString(),path:"/"});
                     }
-                    location.href="../index.html?username=" + username;
+                    // 生成一个临时cookie，用于临时登录的用户名显示在各个页面上
+                    com.Cookie.set('temp_username',username,{path:'/'});
+                    location.href="../index.html";
                 }else{
                     $('#main .pass_tip').show();
                 }

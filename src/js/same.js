@@ -122,14 +122,13 @@ function likes(){
 
 // 是否登录操作
 function isLogin(com){
-    // 判断是否存在两周内免登陆cookie
+    // 先判断是否存在两周内免登陆cookie
     var username=com.Cookie.get('username');
 
-    // 判断是否有登录
-    var params = location.search.slice(1);
-    params = decodeURI(params);
-    if(username === "" && params != ""){
-        username=params.split('=')[1];
+    // 判断是否通过登录页登录
+    var temp_username = com.Cookie.get('temp_username');
+    if(username === "" && temp_username != ""){
+        username=temp_username;
     }
 
     if(username !== ""){
@@ -140,8 +139,9 @@ function isLogin(com){
         $('#header_top .header_top_left .yetlogin').hide();
     }
 
-    // 点击退出，删除免登录cookie
+    // 点击退出，删除免登录cookie和临时cookie
     $('#header_top .header_top_left .yetlogin .quit').click(function(){
         com.Cookie.remove('username');
+        com.Cookie.remove('temp_username');
     })
 }
