@@ -76,9 +76,15 @@
 
 #header #header_top .header_top_left > ul > li a { padding: 0 10px; font-size: 12px; }
 
-#header #header_top .header_top_left > ul > li:first-child:hover a { color: #D7063B; }
+#header #header_top .header_top_left > ul > li:first-child a.login:hover { color: #D7063B; }
 
-#header #header_top .header_top_left > ul > li:nth-child(2) a { padding-left: 0; border-right: 1px solid #ccc; color: #D7063B; }
+#header #header_top .header_top_left > ul > li:first-child a.reg { padding-left: 0; border-right: 1px solid #ccc; color: #D7063B; }
+
+#header #header_top .header_top_left > ul > li.yetlogin { display: none; }
+
+#header #header_top .header_top_left > ul > li.yetlogin span { color: #F76200; }
+
+#header #header_top .header_top_left > ul > li.yetlogin .quit { color: #35B0E9; }
 
 #header #header_top .header_top_left > ul > li.last ul { display: none; position: absolute; background: #fff; width: 272px; z-index: 1000; }
 

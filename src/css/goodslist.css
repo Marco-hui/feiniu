@@ -116,6 +116,8 @@
 
 #main .main_r .sort ul li:nth-child(3) span i.down { top: 4px; }
 
+#main .main_r .sort ul li:nth-child(3) span i.click { color: #333; }
+
 #main .main_r .sort ul li:hover span { color: #D7063B; }
 
 #main .main_r .sort ul li:last-child { margin-left: 5px; border-left: 1px solid #ccc; }
@@ -123,6 +125,8 @@
 #main .main_r .sort ul li:last-child label { display: inline-block; height: 26px; line-height: 26px; vertical-align: middle; }
 
 #main .main_r .sort ul li:last-child select { vertical-align: middle; }
+
+#main .main_r .sort ul li.active { color: #D7063B; }
 
 #main .main_r .sort .all { font-size: 14px; height: 27px; line-height: 27px; }
 

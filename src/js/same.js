@@ -1,4 +1,4 @@
-
+// 加载head内容
 function Header(){
     $.get('../api/data/region.json',function(res){
         var res=res.regions;
@@ -30,9 +30,13 @@ function Header(){
         })
     },'json')
 }
+$('#header').load('../html/head.html',function(){
+    // ajax加载生成省份列表
+    Header();
+});
 
+// 进入页面获取购物车cookie
 function getCarCookie(com){
-    // 进入页面获取购物车cookie
     var car_goods=[];
     var car=com.Cookie.get('car');
     var $qty_car=$('#header .header_middle_car_r b');
@@ -48,12 +52,6 @@ function getCarCookie(com){
     }
     return car_goods;
 }
-
-// 加载head内容
-$('#header').load('../html/head.html',function(){
-    // ajax加载生成省份列表
-    Header();
-});
     
 // 加载footer内容
 $('#footer').load('../html/footer.html');
@@ -119,5 +117,31 @@ function likes(){
         }
         var left = - li_W * idx ;
         $bottom_ul.css('left',left);
+    })
+}
+
+// 是否登录操作
+function isLogin(com){
+    // 判断是否存在两周内免登陆cookie
+    var username=com.Cookie.get('username');
+
+    // 判断是否有登录
+    var params = location.search.slice(1);
+    params = decodeURI(params);
+    if(username === "" && params != ""){
+        username=params.split('=')[1];
+    }
+
+    if(username !== ""){
+        $('#header_top .header_top_left .unlogin').hide();
+        $('#header_top .header_top_left .yetlogin').show();
+    }else{
+        $('#header_top .header_top_left .unlogin').show();
+        $('#header_top .header_top_left .yetlogin').hide();
+    }
+
+    // 点击退出，删除免登录cookie
+    $('#header_top .header_top_left .yetlogin .quit').click(function(){
+        com.Cookie.remove('username');
     })
 }

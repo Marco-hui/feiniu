@@ -1,7 +1,7 @@
 require(['config'],function(){
     require(['jquery','common','same'],function($,com){
         // 只需最顶部的部分，重新加载header
-        $('#header').load('../html/head.html #header_top');
+        $('#header').load('../html/head.html #header_top',function(){isLogin(com)});
 
         // 收货地，三级联动
         place();
@@ -49,6 +49,16 @@ require(['config'],function(){
 
         // 更新cookie通用函数
         function reCookie(car_goods){
+            var total_qty=0;
+            var amount=0;
+            car_goods.forEach(item=>{
+                total_qty += item.qty;
+                amount += item.price * item.qty;
+            })
+            amount=amount.toFixed(2);
+            $tfoot.find('.qty span').text(total_qty);  // 更新总件数
+            $tfoot.find('.amount span').text(amount);  // 更新总金额
+            $tfoot.find('.right .total').text(amount - $discounts.text());  // 更新应付金额
             var date=new Date();
             date.setDate(date.getDate()+30);
             com.Cookie.set('car',JSON.stringify(car_goods),{expires:date.toUTCString(),path:'/'});
@@ -124,6 +134,9 @@ require(['config'],function(){
                 $tbody.html('');
                 // 删除购物车cookie
                 com.Cookie.remove('car');
+                $tfoot.find('.qty span').text(0);  // 更新总件数
+                $tfoot.find('.amount span').text(0);  // 更新总金额
+                $tfoot.find('.right .total').text(0);  // 更新应付金额
             })
 
 
@@ -148,24 +161,14 @@ require(['config'],function(){
                 input.val(qty); // 更新数量
                 var subtotal=($currentTr.find('.price').text() * qty).toFixed(2);
                 $currentTr.find('.subtotal').text(subtotal);  //更新小计
+
                 // console.log(car_goods,currentId);
                 for(var i=0;i<car_goods.length;i++){ // 更新car_goods
                     if(car_goods[i].id == currentId){
                         car_goods[i].qty=qty;
                     }
                 }
-
-                var total_qty=0;
-                var amount=0;
-                car_goods.forEach(item=>{
-                    total_qty += item.qty;
-                    amount += item.price * item.qty;
-                })
-                amount=amount.toFixed(2);
-                $tfoot.find('.qty span').text(total_qty);  // 更新总件数
-                $tfoot.find('.amount span').text(amount);  // 更新总金额
-                $tfoot.find('.right .total').text(amount - $discounts.text());  // 更新应付金额
-                reCookie(car_goods); //更新cookie
+                reCookie(car_goods); //更新cookie和tfoot的数据
             })
 
             // 输入框选择数量，失去焦点时计算"小计"、"总金额"、"应付金额"等

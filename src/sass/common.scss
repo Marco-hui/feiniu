@@ -97,8 +97,12 @@
                 &>li{
                     float: left;padding:7px 0;position: relative;
                     a{padding:0 10px;font-size:12px;}
-                    &:first-child:hover a{color:$hoverC;}
-                    &:nth-child(2) a{padding-left:0;border-right:1px solid #ccc;color:$hoverC;}
+                    &:first-child a.login:hover{color:$hoverC;}
+                    &:first-child a.reg{padding-left:0;border-right:1px solid #ccc;color:$hoverC;}
+                    &.yetlogin{display: none;
+                        span{color:#F76200;}
+                        .quit{color:#35B0E9;}
+                    }
                     &:last-child a i{@extend %arrow_down;}
                     &.last ul{
                         display: none;position: absolute;background: #fff;width: 272px;z-index:1000;

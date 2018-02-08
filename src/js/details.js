@@ -1,5 +1,8 @@
 require(['config'],function(){
     require(['jquery','common','same','zoom'],function($,com){
+        // 是否已登录
+        setTimeout(function(){isLogin(com)},500);
+        
         // 拉取URL地址，获取点击商品的id
         var currentId=location.search.split('=')[1];
         

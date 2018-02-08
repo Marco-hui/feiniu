@@ -1,5 +1,6 @@
 require(['config'],function(){
     require(['jquery','common','same','mcarousel','jqueryui'],function($,com){
+
         // 加载header内容并处理路径问题
         $('#header').load('../html/head.html',function(){
             Header();
@@ -15,6 +16,8 @@ require(['config'],function(){
 
             // 头部购物车数量显示
             getCarCookie(com);
+            isLogin(com);
+            // 
         });
         
         // 首页banner轮播图
