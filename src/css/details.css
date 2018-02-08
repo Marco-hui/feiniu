@@ -108,7 +108,7 @@
 
 #main .container .main_r ul li span { width: 100%; text-align: center; color: #f00; }
 
-#section { margin-top: 10px; }
+#section { margin-top: 10px; margin-bottom: 20px; }
 
 #section .section_l { width: 210px; }
 

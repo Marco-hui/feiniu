@@ -6,12 +6,14 @@ require(['config'],function(){
         // 获取保存浏览记录的cookie，与当前id进行匹配，找到当前商品的信息
         var currentGoods=new Object;
         var arr_goods=com.Cookie.get('goodslist');
-        if(arr_goods != "") arr_goods=JSON.parse(arr_goods);
-        arr_goods.forEach(item=>{
-            if(item.id == currentId){
-                currentGoods=item;
-            }
-        })
+        if(arr_goods != ""){
+            arr_goods=JSON.parse(arr_goods);
+            arr_goods.forEach(item=>{
+                if(item.id == currentId){
+                    currentGoods=item;
+                }
+            })
+        }
 
         // 详情页title、导航写入当前商品的name
         $('title').text(currentGoods.name);
@@ -57,7 +59,7 @@ require(['config'],function(){
         var $good_qty=$('#good_qty'); // 输入框
         function selectQty(){
             $subtotal.text(currentGoods.price);
-            $sub.css('background',"#DEDEDE"); // 数量为1时，sub按钮不可用
+            $sub.css('color',"#ccc"); // 数量为1时，sub按钮不可用
 
             $main_qty.on('click','button',function(){
                 var qty=$good_qty.val();
@@ -69,7 +71,7 @@ require(['config'],function(){
                 }else if(this.className === "add"){
                     qty++;
                 }
-                qty == 1 ? $sub.css('background',"#DEDEDE") : $sub.css('background',"#fff");
+                qty == 1 ? $sub.css('color',"#ccc") : $sub.css('color',"#000");
                 $good_qty.val(qty);
                 $subtotal.text((currentGoods.price*qty).toFixed(2));
             })
@@ -77,7 +79,11 @@ require(['config'],function(){
             // 输入框失去焦点时计算价格
             $good_qty.blur(function(){
                 var qty=$(this).val();
-                qty == 1 ? $sub.css('background',"#DEDEDE") : $sub.css('background',"#fff");
+                if(qty == 0){
+                    qty=1;
+                    $good_qty.val(1);
+                }
+                qty == 1 ? $sub.css('color',"#ccc") : $sub.css('color',"#000");
                 $subtotal.text((currentGoods.price*qty).toFixed(2));
             })
         }
@@ -87,14 +93,11 @@ require(['config'],function(){
 
         // 商品加入购物车相关
         function addToCar(){
-            // 进入页面获取购物车cookie
-            var car_goods=[];
-            var car=com.Cookie.get('car');
-            if(car != "") car_goods=JSON.parse(car);
-            
+            var car_goods=getCarCookie(com);
             var $add2Car=$('#main .add2car');
             var $goodsImg=$('#main .main_l_goods img');
             var $icon_car=$('#header .header_middle_car_r i');
+            var $qty_car=$('#header .header_middle_car_r b');
             $add2Car.click(function(){
                 // 商品飞入购物车效果
                 var $copyImg=$goodsImg.clone();
@@ -114,8 +117,10 @@ require(['config'],function(){
                 }
                 $copyImg.animate(target,700,function(){
                     $copyImg.remove();
+                    $qty_car.text($qty_car.text()*1 + $good_qty.val()*1);
                 });
 
+                console.log(car_goods);
                 // 判断当前商品是否已经存在cookie当中
                 for(var i=0;i<car_goods.length;i++){
                     if(car_goods[i].id == currentId){
@@ -125,24 +130,21 @@ require(['config'],function(){
                 }
 
                 if(i == car_goods.length){
-                    console.log(i)
                     var goods={
                         id:currentId,
                         imgurl:currentGoods.imgurl,
                         name:currentGoods.name,
                         price:currentGoods.price,
-                        qty:$good_qty.val(),
-                        subtotal:$subtotal.val()
+                        qty:$good_qty.val()*1
                     }
 
                     // 添加到数组
                     car_goods.push(goods);
                 }
-                car_goods=JSON.stringify(car_goods);
                 var date=new Date();
                 date.setDate(date.getDate()+30);
                 // 生成购物车cookie
-                com.Cookie.set('car',car_goods,{expires:date.toUTCString(),path:'/'});
+                com.Cookie.set('car',JSON.stringify(car_goods),{expires:date.toUTCString(),path:'/'});
             })
             
         }

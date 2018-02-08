@@ -116,7 +116,7 @@ define(function(){
             remove:function(name){
                 var date=new Date();
                 date.setDate(date.getDate()-10);
-                document.cookie= name + "=null;expires="+date.toUTCString();
+                document.cookie= name + "=null;expires="+date.toUTCString()+";path=/";
             }
         },
         animate:function(ele,opt,callback){

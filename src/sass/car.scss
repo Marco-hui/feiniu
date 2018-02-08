@@ -1,0 +1,87 @@
+@import 'var';
+
+#step{height: 100px;padding-top: 20px;margin-bottom: 15px;}
+
+#main{
+    background: #EBEBEB;padding-bottom: 20px;
+    .main_t{height: 30px;
+        h4.main_t_l{color:#D7063B;height: 32px;line-height: 30px;border-bottom:2px solid #D7063B;margin-bottom: -2px;}
+        .main_t_r{margin-top: 3px;
+            a{color:#0066CC;font-size:12px;margin-left: 5px;}
+        }
+    }
+    table.main_m{
+        border-top:2px solid #D9D9D9;border-bottom:2px solid #D9D9D9;width: 100%;
+        thead tr{
+            background: #fff;height: 50px;border-bottom:1px solid #FF9018;
+            th{
+                &:first-child{
+                    width: 38px;
+                    input{width: 15px;height: 15px;}
+                }
+                &:nth-child(2){width: 88px;text-align: left;}
+                &:nth-child(3){width: 370px;}
+                &:nth-child(4){width: 110px;}
+                &:nth-child(5){width: 180px;}
+                &:nth-child(6){width: 150px;}
+                &:last-child{width: 120px;}
+            }
+        }
+        tbody tr{
+            background: #fff;padding: 15px 0;
+            td{
+                height: 110px;text-align: center;color:#333;border-bottom:1px solid $borderC;
+                img{width: 80px;height: 80px;}
+                &:nth-child(3){
+                    a:hover{color:$hoverC;text-decoration: underline;}
+                }
+                &:nth-child(4){color:#FF9018;}
+                &:nth-child(5){padding-left: 50px;
+                    button{width: 32px;height: 32px;text-align: center;line-height: 32px;border:1px solid $borderC;background: #fff;font-size:32px;float: left;color:#FF9018;cursor:pointer;}
+                    button.sub{line-height: 29px;}
+                    input{float: left;width: 45px;height:32px;border:1px solid $borderC;text-align: center;line-height: 32px;font-size:14px;}
+                    .subtotal{height: 32px;line-height: 32px;color:#FFB346;}
+                }
+                &:nth-child(6){color:#D7063B;font-weight: bold;}
+                &:last-child{
+                    button{width: 30px;height: 25px;font-size:25px;line-height: 20px;cursor:pointer;
+                        &:hover{background: #f00;color:#fff;border-color:#FF9018;}
+                    }
+                }
+            }
+        }
+        tfoot tr{
+            background: #fff;
+            &:first-child{
+                border-bottom:1px solid #e6e6e6;
+                td{
+                    height: 46px;
+                    ul li{
+                        float: left;font-size:12px;margin-right: 26px;
+                    }
+                }
+            }
+            &:last-child{
+                td{
+                    height: 60px;padding:10px 15px;
+                    .left{
+                        ul li{
+                            float: left;line-height: 48px;margin-right: 28px;color:#0066CC;cursor:pointer;
+                            &:first-child{
+                                color:#333;
+                                input{margin-right: 7px;}
+                            }
+                        }
+                    }
+                    .right{
+                        p{display: inline-block;color:#666;font-size:12px;margin-right: 10px;
+                            span{font-size:20px;color:#D7063B;}
+                        }
+                        .account{width: 170px;height: 48px;padding:0 15px;line-height: 48px;background: #C70034;color:#fff;border:0 none;font-size:20px;cursor:pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

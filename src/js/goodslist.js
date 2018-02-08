@@ -64,9 +64,14 @@ require(['config'],function(){
 
                 // 如果显示的是第一页或最后一页，“上一页”或“下一页”按钮变灰
                 if(res.page==1){
-                    $page_ul.children().eq(0).css('background','#ccc');
+                    $page_ul.children().eq(0).css('color','#ccc');
+                    $('#main .main_r .all_page .left').css('color','#ccc');
                 }else if(res.page==pageNum){
-                    $page_ul.children().eq(pageNum+1).css('background','#ccc');
+                    $page_ul.children().eq(pageNum+1).css('color','#ccc');
+                    $('#main .main_r .all_page .right').css('color','#ccc');
+                }else{
+                    $('#main .main_r .all_page .left').css('color','#000');
+                    $('#main .main_r .all_page .right').css('color','#000');
                 }
 
                 // main_r sort栏 显示总商品数
@@ -176,5 +181,8 @@ require(['config'],function(){
 
         // likes部分
         likes();
+
+        // 头部购物车数量显示
+        setTimeout(function(){getCarCookie(com)},500); //等头部load完之后才能获取到头部dom节点
     })
 })

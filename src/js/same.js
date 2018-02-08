@@ -30,6 +30,25 @@ function Header(){
         })
     },'json')
 }
+
+function getCarCookie(com){
+    // 进入页面获取购物车cookie
+    var car_goods=[];
+    var car=com.Cookie.get('car');
+    var $qty_car=$('#header .header_middle_car_r b');
+    if(car == ""){
+        $qty_car.text(0);
+    }else{
+        car_goods=JSON.parse(car);
+        var total_qty=0;
+        car_goods.forEach(item=>{
+            total_qty += item.qty;
+        })
+        $qty_car.text(total_qty);
+    }
+    return car_goods;
+}
+
 // 加载head内容
 $('#header').load('../html/head.html',function(){
     // ajax加载生成省份列表

@@ -12,6 +12,9 @@ require(['config'],function(){
             $("#header_middle .main_logo img").attr('src','img/feiniu_main_logo.png');
             // 默认显示首页左侧栏导航
             $('#header_bottom .header_bottom_all ul').show();
+
+            // 头部购物车数量显示
+            getCarCookie(com);
         });
         
         // 首页banner轮播图
@@ -65,6 +68,21 @@ require(['config'],function(){
                     window.scrollTo(0,y);
                 },30)
             })
+
+            // 右侧边栏显示购物车商品数量
+            var car_goods=[];
+            var car=com.Cookie.get('car');
+            var $qty_car=$('#aside .aside_right .car b');
+            if(car == ""){
+                $qty_car.text(0);
+            }else{
+                car_goods=JSON.parse(car);
+                var total_qty=0;
+                car_goods.forEach(item=>{
+                    total_qty += item.qty;
+                })
+                $qty_car.text(total_qty);
+            }
         }
         aside();
 
