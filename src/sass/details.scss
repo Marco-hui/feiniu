@@ -27,6 +27,7 @@
                     &:last-child{margin-right: 0;}
                     &:hover{border-color:$borderC;}
                     &.active{border-color:#FE9431;}
+                    img{width: 60px;height: 60px;}
                 }
             }
             .main_l_collect{

@@ -28,10 +28,9 @@ require(['config'],function(){
         // 根据id,显示相应图片
         var $main_l_goods=$('#main .main_l_goods');
         var $smallList=$('#main .main_l_smallList');
-        var imgurl_s="../img/g"+currentId+"_1_s.jpg";
-        // var imgurl_m="../img/g"+currentId+"_1_m.jpg"; // 高清图
-        // var imgurl_m=currentGoods.imgurl; // 标准图
-        var imgurl_m="../img/g"+currentId+"_1_x.jpg"; // 超清图
+
+        var imgurl_s="../img/g"+currentId+"_1_x.jpg";
+        var imgurl_m="../img/g"+currentId+"_1_x.jpg";
         var imgurl_x="../img/g"+currentId+"_1_x.jpg";
         
         $main_l_goods.find('img').attr({src:imgurl_m,'data-big':imgurl_x});

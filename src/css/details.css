@@ -30,6 +30,8 @@
 
 #main .container .main_l .main_l_smallList li.active { border-color: #FE9431; }
 
+#main .container .main_l .main_l_smallList li img { width: 60px; height: 60px; }
+
 #main .container .main_l .main_l_collect { border-top: 1px solid #e2e2e2; }
 
 #main .container .main_l .main_l_collect span { height: 40px; line-height: 40px; padding-left: 20px; cursor: pointer; color: #69696C; }
