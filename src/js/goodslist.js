@@ -253,5 +253,59 @@ require(['config'],function(){
             })
         }
         filter();
+
+        // 点击加入购物车
+        $('#main .main_r .goodslist').on('click','button',function(){
+            var $currentLi=$(this).closest('li');
+            var currentId=$currentLi.prop('id');
+            var $goodsImg=$currentLi.find('img');
+            var $icon_car=$('#header .header_middle_car_r i');
+            var $qty_car=$('#header .header_middle_car_r b');
+
+            var $copyImg=$goodsImg.clone();
+            $copyImg.css({
+                position:"absolute",
+                width:210,
+                height:210,
+                left:$goodsImg.offset().left,
+                top:$goodsImg.offset().top
+            })
+            $copyImg.insertAfter($('#main'));
+            var target={
+                width:30,
+                height:30,
+                left:$icon_car.offset().left,
+                top:$icon_car.offset().top
+            }
+            $copyImg.animate(target,700,function(){
+                $copyImg.remove();
+                $qty_car.text($qty_car.text()*1 + 1);
+            });
+
+            var car_goods=getCarCookie(com);
+            // 判断当前商品是否已经存在cookie当中
+            for(var i=0;i<car_goods.length;i++){
+                if(car_goods[i].id == currentId){
+                    car_goods[i].qty ++;
+                    break;
+                }
+            }
+            if(i == car_goods.length){
+                var goods={
+                    id:currentId,
+                    imgurl:$goodsImg.prop('src'),
+                    name:$currentLi.find('.name').text(),
+                    price:($currentLi.find('.price').text()).slice(1),
+                    qty:1
+                }
+
+                // 添加到数组
+                car_goods.push(goods);
+            }
+            var date=new Date();
+            date.setDate(date.getDate()+30);
+            // 生成购物车cookie
+            com.Cookie.set('car',JSON.stringify(car_goods),{expires:date.toUTCString(),path:'/'});
+        })
     })
 })
