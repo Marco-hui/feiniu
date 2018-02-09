@@ -139,3 +139,47 @@
 #section .section_r .tab_content .content0 { display: none; }
 
 #section .section_r .tab_content .content1 { padding: 20px 50px 10px; }
+
+#section .section_r .tab_content .content3 { padding: 20px 0; }
+
+#section .section_r .tab_content .content3 h4 { text-align: left; background: #F6F6F6; height: 38px; line-height: 38px; padding-left: 20px; }
+
+#section .section_r .tab_content .content3 table#commentlist { width: 100%; border-top: 1px solid #ccc; }
+
+#section .section_r .tab_content .content3 table#commentlist tbody tr { border-bottom: 1px dashed #ccc; }
+
+#section .section_r .tab_content .content3 table#commentlist tbody tr td { font-size: 14px; padding: 30px 0; }
+
+#section .section_r .tab_content .content3 table#commentlist tbody tr td:first-child { width: 130px; padding-left: 20px; }
+
+#section .section_r .tab_content .content3 table#commentlist tbody tr td:first-child i { width: 20px; height: 20px; background: url(img/star.gif) no-repeat 0 0; background-size: cover; float: left; }
+
+#section .section_r .tab_content .content3 table#commentlist tbody tr td:first-child i.active { background-position: 0 -21px; }
+
+#section .section_r .tab_content .content3 table#commentlist tbody tr td:first-child .time { font-size: 12px; }
+
+#section .section_r .tab_content .content3 table#commentlist tbody tr td:nth-child(2) { padding: 0 30px; color: #DD00A7; }
+
+#section .section_r .tab_content .content3 table#commentlist tbody tr td:last-child { width: 150px; }
+
+#section .section_r .tab_content .content3 table#commentlist tbody tr td:last-child img { width: 30px; height: 30px; }
+
+#section .section_r .tab_content .content3 table#commentlist tbody tr td:last-child span { font-size: 12px; color: #888; margin-right: 10px; }
+
+#section .section_r .tab_content .content3 table#commentlist tbody tr td:last-child span.username { color: #FF2648; }
+
+#section .section_r .tab_content .content3 #comment_page ul { padding: 20px; }
+
+#section .section_r .tab_content .content3 #comment_page ul li { float: left; width: 25px; height: 25px; text-align: center; line-height: 23px; border: 1px solid #ccc; margin-right: 5px; cursor: pointer; }
+
+#section .section_r .tab_content .content3 #comment_page ul li.active { background: #D7063B; color: #FFF; }
+
+#section .section_r .tab_content .content3 .comment_user { margin-top: 20px; border-top: 1px solid #ccc; }
+
+#section .section_r .tab_content .content3 .comment_user h4 { margin-bottom: 10px; }
+
+#section .section_r .tab_content .content3 .comment_user ul#select_star { overflow: hidden; padding-left: 10px; }
+
+#section .section_r .tab_content .content3 .comment_user ul#select_star li { background: url(img/star.gif) no-repeat 0 0; float: left; width: 28px; height: 28px; }
+
+#section .section_r .tab_content .content3 .comment_user ul#select_star li.active { background-position: 0 -29px; }

@@ -11,5 +11,5 @@
     //释放查询结果集，避免资源浪费
     $res -> close();
 
-    var_dump($content);
+    echo json_encode($content,JSON_UNESCAPED_UNICODE);
 ?>

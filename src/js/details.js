@@ -1,5 +1,5 @@
 require(['config'],function(){
-    require(['jquery','common','same','zoom'],function($,com){
+    require(['jquery','common','same','zoom','dateFormat'],function($,com){
         // 是否已登录
         setTimeout(function(){isLogin(com)},500);
         
@@ -179,5 +179,69 @@ require(['config'],function(){
             })
         }
         sectionTab();
+
+        // 评论功能
+        function comment(){
+            // 获取当前商品的评论列表
+            var $commentlist=$('#commentlist tbody');
+            // 分页加载评论
+            // var qty=20; // 默认一页显示20条评论
+            // var page=1; // 默认显示第1页
+            $.get('../api/details.php',{goods:currentId},function(data){
+                $commentlist.html(data.map(item=>{
+                    return `<tr id=comments${item.id}>
+                        <td class="star">
+                            <i></i><i></i><i></i><i></i><i></i>
+                            <span class="time">${item.time}</span>
+                        </td>
+                        <td>${item.content}</td>
+                        <td>
+                            <img src="../css/img/head_pic.png"/>
+                            <span class="username">${item.customer}</span>
+                            <span class="city">${item.city}</span>
+                        </td>
+                    </tr>`
+                }).join(''))
+                var $star_td=$('#commentlist .star');
+                for(var i=0;i<data.length;i++){ //根据评价的星级高亮相应数量的星星
+                    // console.log($star_td.eq(i).children().slice(0,2));
+                    var $stars_i=$star_td.eq(i).children();
+                    switch(data[i].star){
+                        case "1":
+                            $stars_i.slice(0,1).addClass('active');break;
+                        case "2":
+                            $stars_i.slice(0,2).addClass('active');break;
+                        case "3":
+                            $stars_i.slice(0,3).addClass('active');break;
+                        case "4":
+                            $stars_i.slice(0,4).addClass('active');break;
+                        case "5":
+                            $stars_i.slice(0,5).addClass('active');break;
+                        default:
+                            break;
+                    }
+                }
+            },'json')
+
+            // 用户评论
+            // 星级选择
+            var $select_star=$('#select_star');
+            var $star_lis=$select_star.children();
+            $star_lis.eq(0).addClass('active');
+            $select_star.on('mouseover','li',function(){
+                var idx=$(this).index();
+                $star_lis.slice(0,idx+1).addClass('active');
+                $star_lis.slice(idx+1).removeClass('active');
+            })
+            var star_score=0;
+            $select_star.on('click','li',function(){
+                star_score=$(this).index();
+            })
+            $select_star.on('mouseout',function(){
+                $star_lis.slice(0,star_score+1).addClass('active');
+                $star_lis.slice(star_score+1).removeClass('active');
+            })
+        }
+        comment();
     })
 })
