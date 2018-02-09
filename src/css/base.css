@@ -14,7 +14,7 @@ input,button,select,textarea{outline-style:none;}
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
     color: #AEAEAE;
-    font-size:16px;
+    font-size:12px;
 }
 .clfix::after{
     content: "";
