@@ -284,7 +284,7 @@
                 <ul class="tab_nav clfix">
                     <li>商品详情</li>
                     <li>规格与包装</li>
-                    <li>商品评价 ( <span>0</span> )</li>
+                    <li>商品评价 ( <span class="num"></span> )</li>
                     <li>售后保障</li>
                 </ul>
                 <div class="tab_content">
@@ -296,14 +296,7 @@
                         <table id="commentlist">
                             <tbody></tbody>
                         </table>
-                        <div id="comment_page" class="clfix">
-                            <ul class="fr">
-                                <li class="active">1</li>
-                                <li>2</li>
-                                <li>3</li>
-                                <li>4</li>
-                            </ul>
-                        </div>
+                        <div id="comment_page" class="clfix"></div>
                         <div class="comment_user">
                             <h4>发表评论</h4>
                             <ul id="select_star">
@@ -313,9 +306,13 @@
                                 <li></li>
                                 <li></li>
                             </ul>
-                            <textarea name="content" class="content"></textarea>
-                            <button class="clean">清空</button>
+                            <textarea name="content" class="comment_content" placeholder="请输入评价"></textarea>
+                            <div class="shade">
+                                <p class="locate">您尚未登录，不能发表评论，请先 <a href="login.html">登录</a></p>
+                            </div>
+                            <p class="fl strNum"><span>0</span> / 200</p>
                             <button class="send">发表</button>
+                            <button class="clean">清空</button>
                         </div>
                     </div>
                     <div class="content0 content4"><img src="../img/details_as.png" /></div>

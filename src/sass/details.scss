@@ -126,7 +126,7 @@
     .section_r{width: 970px;
         .tab_nav{
             background: #F6F6F6;width: 970px;border:1px solid $borderC;height: 36px;
-            &.fixed{position: fixed;top: 0;}
+            &.fixed{position: fixed;top: 0;z-index:1000;}
             li{
                 float: left;cursor:pointer;padding: 0 20px;height: 36px;line-height: 36px;font-size:14px;color:$fontC;
                 &:hover{color:$hoverC;}
@@ -144,6 +144,7 @@
                     width: 100%;border-top:1px solid $borderC;
                     tbody tr{
                         border-bottom: 1px dashed $borderC;
+                        &:last-child{border-bottom-style:solid;}
                         td{font-size:14px;padding: 30px 0;
                             &:first-child{
                                 width: 130px;padding-left: 20px;
@@ -177,14 +178,24 @@
                     }
                 }
                 .comment_user{
-                    margin-top: 20px;border-top: 1px solid $borderC;
+                    margin-top: 20px;border-top: 1px solid $borderC;position: relative;
                     h4{margin-bottom: 10px;}
                     ul#select_star{
-                        overflow: hidden;padding-left: 10px;
+                        overflow: hidden;padding-left: 10px;margin-bottom: 5px;
                         li{
                             background: url(img/star.gif) no-repeat 0 0;float: left;width: 28px;height: 28px;
                             &.active{background-position: 0 -29px;}
                         }
+                    }
+                    .strNum{font-size:12px;color:$fontC;}
+                    .comment_content{width: 100%;height: 100px;font-size:16px;outline-style:none;}
+                    .shade{
+                        width: 968px;height: 98px;position: absolute;background: #cecece;left: 1px;top: 82px;
+                        a{color:#1898D1;}
+                    }
+                    button{
+                        width: 60px;height: 25px;text-align: center;line-height: 25px;background: #ccc;color:#fff;border:0 none;float: right;margin-left: 10px;cursor:pointer;
+                        &.active{background: #FF2648;}
                     }
                 }
             }

@@ -7,14 +7,14 @@ i,span{display: inline-block;}
 img{border:0 none;display: block;}
 *{box-sizing:border-box;}
 select, input { vertical-align:middle;}
-textarea { resize:none; } 
+textarea{ resize:none; } 
 table { border-collapse:collapse;}
-input,button,select{outline-style:none;} 
+input,button,select,textarea{outline-style:none;} 
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
     color: #AEAEAE;
-    font-size:12px;
+    font-size:16px;
 }
 .clfix::after{
     content: "";

@@ -51,11 +51,11 @@
 
     $arr=array_slice($content,$idx,$qty);
     $arr_show=array(
-            "page" => $page,
-            "qty" => $qty,
-            "total" => $total,
-            "arr" => $arr
-        );
+        "page" => $page,
+        "qty" => $qty,
+        "total" => $total,
+        "arr" => $arr
+    );
 
    echo json_encode($arr_show,JSON_UNESCAPED_UNICODE);
 

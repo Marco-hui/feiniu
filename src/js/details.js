@@ -185,43 +185,69 @@ require(['config'],function(){
             // 获取当前商品的评论列表
             var $commentlist=$('#commentlist tbody');
             // 分页加载评论
-            // var qty=20; // 默认一页显示20条评论
-            // var page=1; // 默认显示第1页
-            $.get('../api/details.php',{goods:currentId},function(data){
-                $commentlist.html(data.map(item=>{
-                    return `<tr id=comments${item.id}>
-                        <td class="star">
-                            <i></i><i></i><i></i><i></i><i></i>
-                            <span class="time">${item.time}</span>
-                        </td>
-                        <td>${item.content}</td>
-                        <td>
-                            <img src="../css/img/head_pic.png"/>
-                            <span class="username">${item.customer}</span>
-                            <span class="city">${item.city}</span>
-                        </td>
-                    </tr>`
-                }).join(''))
-                var $star_td=$('#commentlist .star');
-                for(var i=0;i<data.length;i++){ //根据评价的星级高亮相应数量的星星
-                    // console.log($star_td.eq(i).children().slice(0,2));
-                    var $stars_i=$star_td.eq(i).children();
-                    switch(data[i].star){
-                        case "1":
-                            $stars_i.slice(0,1).addClass('active');break;
-                        case "2":
-                            $stars_i.slice(0,2).addClass('active');break;
-                        case "3":
-                            $stars_i.slice(0,3).addClass('active');break;
-                        case "4":
-                            $stars_i.slice(0,4).addClass('active');break;
-                        case "5":
-                            $stars_i.slice(0,5).addClass('active');break;
-                        default:
-                            break;
+            var page=1; // 默认显示第1页
+            var qty=10; // 默认一页显示20条评论
+            function getList(page){
+                $.get('../api/details.php',{goods:currentId,page:page,qty:qty},function(res){
+                    var data=res.arr;
+                    $commentlist.html(data.map(item=>{
+                        return `<tr id=comments${item.id}>
+                            <td class="star">
+                                <i></i><i></i><i></i><i></i><i></i>
+                                <span class="time">${item.time}</span>
+                            </td>
+                            <td>${item.content}</td>
+                            <td>
+                                <img src="../css/img/head_pic.png"/>
+                                <span class="username">${item.customer}</span>
+                                <span class="city">${item.city}</span>
+                            </td>
+                        </tr>`
+                    }).join(''))
+                    var $star_td=$('#commentlist .star');
+                    for(var i=0;i<data.length;i++){ //根据评价的星级高亮相应数量的星星
+                        // console.log($star_td.eq(i).children().slice(0,2));
+                        var $stars_i=$star_td.eq(i).children();
+                        switch(data[i].star){
+                            case "1":
+                                $stars_i.slice(0,1).addClass('active');break;
+                            case "2":
+                                $stars_i.slice(0,2).addClass('active');break;
+                            case "3":
+                                $stars_i.slice(0,3).addClass('active');break;
+                            case "4":
+                                $stars_i.slice(0,4).addClass('active');break;
+                            case "5":
+                                $stars_i.slice(0,5).addClass('active');break;
+                            default:
+                                break;
+                        }
                     }
-                }
-            },'json')
+                    // 显示总评论数
+                    $('#section .section_r .tab_nav .num').text(res.total);
+
+                    // 生成分页
+                    var pageNum=Math.ceil(res.total/res.qty);
+                    var $page_ul=$('<ul class="fr"></ul>');
+                    var html='';
+                    for(var i=0;i<pageNum;i++){
+                        html += `<li>${i+1}</li>`;
+                    }
+                    $page_ul.html(html);
+                    $('#comment_page').html('');
+                    $('#comment_page').append($page_ul);
+                    $page_ul.children().eq(res.page-1).addClass('active');
+                },'json')
+            }
+            getList();
+
+            // 点击分页按钮切换页码
+            $('#comment_page').on('click','li',function(){
+                $(this).addClass('active').siblings('li').removeClass('active');
+                var page=$(this).text();
+                getList(page);
+            })
+            
 
             // 用户评论
             // 星级选择
@@ -241,6 +267,75 @@ require(['config'],function(){
                 $star_lis.slice(0,star_score+1).addClass('active');
                 $star_lis.slice(star_score+1).removeClass('active');
             })
+
+            // 评论权限判断
+            // 先判断是否存在两周内免登陆cookie
+            var username=com.Cookie.get('username');
+            // 判断是否通过登录页登录
+            var temp_username = com.Cookie.get('temp_username');
+            if(username === "" && temp_username != ""){
+                username=temp_username;
+            }
+            var $comment_user=$('#section .section_r .comment_user');
+            if(username != ""){
+                $comment_user.find('.shade').hide();
+                $comment_user.find('>button').addClass('active');
+            }else{
+                $comment_user.find('.shade').show();
+                $comment_user.find('>button').removeClass('active');
+            }
+
+            // 清空操作
+            var $input=$comment_user.find('.comment_content');
+            $comment_user.find('.clean').click(function(){
+                $input.val('').focus();
+            })
+
+            // 输入实时显示字符
+            var $strNum=$comment_user.find('.strNum');
+            $input.on('input',function(){
+                var val=$(this).val().trim();
+                var len=val.length;
+                if(len>200){
+                    len=200;
+                    $(this).val(val.slice(0,len));
+                }
+                $strNum.find('span').text(len);
+            })
+
+            // 获取用户所在城市
+            $.get('../api/getIp.php',function(ip){
+                $.get('../api/getCity.php',{ip:ip},function(city){
+                    sendMsg(city);
+                },'text')
+            })
+            // 发表评价
+            function sendMsg(city){
+                $comment_user.find('.send').click(function(){
+                    var val=$input.val().trim();
+                    // 过滤敏感字符
+                    var arr_sensitive='fuck,你妈,shit,艹,我日,垃圾,草,操'.split(',');
+                    arr_sensitive.forEach(function(item){
+                        var reg = new RegExp(item,'gi');
+                        val = val.replace(reg,'**'); 
+                    })
+                    if(val != ""){
+                        var data={
+                            star:star_score+1,
+                            content:val,
+                            customer:username,
+                            city:city,
+                            goods:currentId
+                        }
+                        $.post('../api/details.php',data,function(data){
+                            console.log(data);
+                            var page=$('#comment_page').find('li.active').text();
+                            getList(page);
+                        });
+                    }
+                    $input.val('').focus();
+                })
+            }
         }
         comment();
     })

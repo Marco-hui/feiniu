@@ -128,7 +128,7 @@
 
 #section .section_r .tab_nav { background: #F6F6F6; width: 970px; border: 1px solid #ccc; height: 36px; }
 
-#section .section_r .tab_nav.fixed { position: fixed; top: 0; }
+#section .section_r .tab_nav.fixed { position: fixed; top: 0; z-index: 1000; }
 
 #section .section_r .tab_nav li { float: left; cursor: pointer; padding: 0 20px; height: 36px; line-height: 36px; font-size: 14px; color: #666; }
 
@@ -147,6 +147,8 @@
 #section .section_r .tab_content .content3 table#commentlist { width: 100%; border-top: 1px solid #ccc; }
 
 #section .section_r .tab_content .content3 table#commentlist tbody tr { border-bottom: 1px dashed #ccc; }
+
+#section .section_r .tab_content .content3 table#commentlist tbody tr:last-child { border-bottom-style: solid; }
 
 #section .section_r .tab_content .content3 table#commentlist tbody tr td { font-size: 14px; padding: 30px 0; }
 
@@ -174,12 +176,24 @@
 
 #section .section_r .tab_content .content3 #comment_page ul li.active { background: #D7063B; color: #FFF; }
 
-#section .section_r .tab_content .content3 .comment_user { margin-top: 20px; border-top: 1px solid #ccc; }
+#section .section_r .tab_content .content3 .comment_user { margin-top: 20px; border-top: 1px solid #ccc; position: relative; }
 
 #section .section_r .tab_content .content3 .comment_user h4 { margin-bottom: 10px; }
 
-#section .section_r .tab_content .content3 .comment_user ul#select_star { overflow: hidden; padding-left: 10px; }
+#section .section_r .tab_content .content3 .comment_user ul#select_star { overflow: hidden; padding-left: 10px; margin-bottom: 5px; }
 
 #section .section_r .tab_content .content3 .comment_user ul#select_star li { background: url(img/star.gif) no-repeat 0 0; float: left; width: 28px; height: 28px; }
 
 #section .section_r .tab_content .content3 .comment_user ul#select_star li.active { background-position: 0 -29px; }
+
+#section .section_r .tab_content .content3 .comment_user .strNum { font-size: 12px; color: #666; }
+
+#section .section_r .tab_content .content3 .comment_user .comment_content { width: 100%; height: 100px; font-size: 16px; outline-style: none; }
+
+#section .section_r .tab_content .content3 .comment_user .shade { width: 968px; height: 98px; position: absolute; background: #cecece; left: 1px; top: 82px; }
+
+#section .section_r .tab_content .content3 .comment_user .shade a { color: #1898D1; }
+
+#section .section_r .tab_content .content3 .comment_user button { width: 60px; height: 25px; text-align: center; line-height: 25px; background: #ccc; color: #fff; border: 0 none; float: right; margin-left: 10px; cursor: pointer; }
+
+#section .section_r .tab_content .content3 .comment_user button.active { background: #FF2648; }
