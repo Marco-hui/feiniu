@@ -133,7 +133,8 @@ function isLogin(com){
 
     if(username !== ""){
         $('#header_top .header_top_left .unlogin').hide();
-        $('#header_top .header_top_left .yetlogin').show();
+        $('#header_top .header_top_left .yetlogin').show().find('span').text(username);
+
     }else{
         $('#header_top .header_top_left .unlogin').show();
         $('#header_top .header_top_left .yetlogin').hide();
