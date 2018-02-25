@@ -60,11 +60,12 @@ require(['config'],function(){
 
             // 点击返回顶部
             $aR.find('.toTop').click(function(){
+                let speed=10;
                 var timer=setInterval(function(){
-                    var current=window.scrollY;
-                    var speed= - current/10;
-                    var y=current + speed;
-                    if(y<10){
+                    var y=window.scrollY;
+                    speed= Math.ceil(y/10);
+                    y-=speed;
+                    if(y<=0){
                         y=0;
                         clearInterval(timer);
                     }
