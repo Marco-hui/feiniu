@@ -1,4 +1,4 @@
-require(['config'],function(){
+ require(['config'],function(){
     require(['jquery','common','same'],function($,com){
         // 只需最顶部的部分，重新加载header
         $('#header').load('../html/head.html #header_top',function(){isLogin(com)});
@@ -207,5 +207,30 @@ require(['config'],function(){
             
         }
         carOpera();
+
+        // 看了又看
+        function relook(){
+            var $bottom_ul=$('#likes .bottom_ul');
+            var li_w=$bottom_ul.find('>li').first().outerWidth();
+            var length=$bottom_ul.find('>li').length;
+            var idx=0;
+            $bottom_ul.css("width",li_w*length);
+            $('#likes .bottom').on('click','span',function(){
+                if($(this).hasClass('turnL')){
+                    idx--;
+                    if(idx<0){
+                        idx=0;
+                    }
+                }else if($(this).hasClass('turnR')){
+                    idx++;
+                    if(idx>=length){
+                        idx=length-1;
+                    }
+                }
+                var currentLeft= -idx*li_w;
+                $bottom_ul.animate({left:currentLeft});
+            })
+        }
+        relook();
     })
 })

@@ -77,3 +77,11 @@
 #main table.main_m tfoot tr:last-child td .right p span { font-size: 20px; color: #D7063B; }
 
 #main table.main_m tfoot tr:last-child td .right .account { width: 170px; height: 48px; padding: 0 15px; line-height: 48px; background: #C70034; color: #fff; border: 0 none; font-size: 20px; cursor: pointer; }
+
+#likes .bottom > span { position: absolute; display: block; font-size: 40px; z-index: 1000; top: 50%; transform: translate(0, -50%); color: #666; background: rgba(0, 0, 0, 0.3); cursor: pointer; }
+
+#likes .bottom .turnL { left: 0; }
+
+#likes .bottom .turnR { right: 0; }
+
+#likes .bottom .bottom_ul > li { float: left; }
